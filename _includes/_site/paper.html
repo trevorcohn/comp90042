@@ -1,0 +1,84 @@
+<div class="media">
+  <a class="pull-left thumbnail" {% if include.paper.doc-url %} href="{{ include.paper.doc-url }}" {% endif %}>
+    <img src="img/paper/{{ include.paper.img }}.jpg" alt=""/>
+  </a>
+  <div class="media-body">
+    <strong>{{ include.paper.title }}</strong><br/>
+    {% if include.paper.authors %}{{ include.paper.authors }}.{% endif %}  
+    {% case include.paper.paper-type %}
+      {% when "inproceedings" %}
+        In
+        {% if include.paper.booktitle-url %}
+          <a href="{{ include.paper.booktitle-url}}">
+            <span class="glyphicon glyphicon-globe"></span>
+          </a>
+        {% endif %}
+          <i>{{ include.paper.booktitle }}</i>,
+        {% if include.paper.pages %}pages {{ include.paper.pages }},{% endif %}
+      {% when "article" %}
+        In
+        {% if include.paper.journal-url %}
+          <a href="{{ include.paper.journal-url }}">
+            <span class="glyphicon glyphicon-globe"></span>
+          </a>
+        {% endif %}
+          <i>{{ include.paper.journal }}</i>,
+            {% if include.paper.volume %}{{ include.paper.volume }}{% endif %}{% if include.paper.number %}({{ include.paper.number }}){% endif %}
+            {% if include.paper.article%}: Article {{ include.paper.article}},{% endif %}
+            {% if include.paper.pages %}: pages {{ include.paper.pages }},{% endif %}
+      {% when "dissertation" %}
+        Dissertation, {{ include.paper.institution }}.
+    {% endcase %} 
+    {{ include.paper.year }}.<br/>
+    {% assign identifier = include.paper.title | remove:' ' | remove:'?' | remove:':' | remove:',' | remove:'.' %}
+    {% if include.paper.abstract %}
+      <a data-toggle="modal" href="#abstract{{ identifier }}" class="label label-default">Abstract</a>
+      <!-- Modal -->
+      <div class="modal fade" id="abstract{{ identifier }}" tabindex="-1" role="dialog" aria-hidden="true"> <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title">{{ include.paper.title }}</h4>
+            </div>
+            <div class="modal-body">
+              {{ include.paper.abstract }}
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal --> 
+    {% endif %}
+    {% if include.paper.doc-url %} 
+        <a href="{{ include.paper.doc-url }}" class="label label-info">PDF</a>
+    {% endif %}
+    {% if include.paper.errata %}
+      <!-- Modal -->
+      <div class="modal fade" id="errata{{ identifier }}" tabindex="-1" role="dialog" aria-hidden="true"> <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Errata | {{ include.paper.title }}</h4>
+            </div>
+            <div class="modal-body">
+              {{ include.paper.errata }}
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal --> 
+       <a data-toggle="modal" href="#errata{{ identifier }}" class="label label-warning">
+         Errata
+      </a>&nbsp;      
+    {% endif %}
+    {% if include.paper.slides %} 
+      <a href="{{ include.paper.slides }}" class="label label-info">Slides</a> 
+    {% endif %}
+    {% if include.paper.latex %}
+      <a href="{{ include.paper.latex }}" class="label label-danger">\( \LaTeX \)</a>
+    {% endif %}
+    {% if include.paper.code %}
+      <a href="{{ include.paper.code }}" class="label label-success">Code</a>
+    {% endif %}
+    {% if include.paper.supp %}
+      <a href="{{ include.paper.supp }}" class="label label-success">Supplementary</a>
+    {% endif %}
+  </div>
+</div>

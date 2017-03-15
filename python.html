@@ -1,0 +1,79 @@
+---
+layout: clean
+title: Python for COMP90042
+picture: matrix
+---
+<div class="page-header">
+  <h3>COMP90042: Python environment</h3>
+</div>
+
+<p>For the subject we will be using the python programming language, almost exclusively. You will want to install
+python on your own machine (see below for details.)</p>
+
+<p>Many of the lectures as well as the assignments will have associated iPython notebook files. iPython notebooks are a nice way to your organize Python code into easily
+digestible, independantly runable bits, with output (both text and visualisations) and comments appearing in
+separate blocks between code blocks. The official recommended way to load iPython notebooks (as well as regular
+Python code) in the context of this class is <a  href="https://www.enthought.com/products/canopy/">Canopy</a>.
+Canopy is a special python environment which has iPython notebook support built in. The Engineering lab
+computers have Canopy installed, including all the python packages and other software needed for this class. If you want to use
+Canopy on your own machine, you can get a free academic version <a
+href="https://store.enthought.com/#canopy-academic">here</a>. You will need to sign up and request an academic
+license. After installation, the key packages needed for this class (NLTK, Sci-kit learn) can be installed
+through the Canopy package manager. In order to load a iPython notebook in Canopy, select the editor from the
+main menu, and then click on File-&gt;Open. After you select the file, it will open in your web browser.  Later in the class we may also make use of the Stanford NLP tools (including part-of-speech tagger and parser), which are on the lab computers and can be accessed via NLTK, see instructions <a href="https://github.com/nltk/nltk/wiki/Installing-Third-Party-Software">here</a></p>
+
+<p>If you want to run iPython notebooks with a regular Python installation, you will need to install ipython,
+and the ipython notebook software to run this.  Please see 
+<a href="http://ipython.org/notebook.html">the ipython notebook</a> site for installation instructions. Once this is installed you
+simply run <i>ipython notebook</i> from a folder containing the downloaded <i>.ipynb</i> files and it should find them and allow you
+to view the notebooks. 
+Note that if you do install this yourself, you will need to install many of the libraries yourself (these come
+bundled with Canopy.) 
+For example, you will need numpy, scipy and matplotlib, as well as the libraries mentioned above (nltk,
+scikit_learn) which you can install using ubuntu packages, 'pip' or the like. 
+Be warned, installing the mathematical libraries can sometimes prove difficult, due to their many depenencies on
+linear algebra development libraries, fortran and the like.
+Canopy is a much easier solution, unless you're up for a challenge.
+</p>                                                                                        
+
+<p> The version of Canopy officially supported for this class uses Python 2.7, and so even if you are not using Canopy we recommend you use Python 2.7. We will accept assignment submissions written in Python 3.5, but we will not provide support related to Python version differences: you are responsible for any special issues (e.g. incompatibilities with packages) that may arise. </p>
+
+<h4> iPython Notebooks </h4>
+
+<table border="2" class="icon-fixed-width" align="center" style="width: 100%;" cellpadding="3">
+<tbody>
+<tr>
+    <td>Date</td>
+    <td>Topic</td>
+    <td>Notebook</td>
+</tr>
+{% capture threshold %}{{'now' | date: "%s" | plus : 604800}}{% endcapture %}
+{% for lect in site.lectures %}
+<tr>
+  {% if lect.notebook %}
+  {% capture lecttime %}{{lect.date | date: '%s'}}{% endcapture %}
+  <td>{{ lect.date  | date: "%a %-d/%-m" }}</td>
+  <td><i>{{ lect.title }}</i>
+    {% for matter in lect.materials %}
+    <br> {{ matter }}
+    {% endfor %}
+  </td>
+  <td>
+    {% if lecttime <= threshold and lect.notebook %}
+        {% assign first = 1 %}
+        {% for matter in lect.notebook %}
+            {% if first == 1 %}
+                {% assign first = 0 %}
+            {% else %}
+                <br> 
+            {% endif %}
+            <a href="notebooks/{{ matter }}">{{ matter }}</a>
+        {% endfor %}
+        <br>
+    {% endif %}
+  </td>
+  {% endif %}
+</tr>
+{% endfor %}
+</tbody>
+</table>

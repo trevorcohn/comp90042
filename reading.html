@@ -1,0 +1,48 @@
+---
+layout: clean
+title: Reading for COMP90042
+picture: matrix
+---
+<div class="page-header">
+  <h3>COMP90042: Reading</h3>
+</div>
+
+<p>
+Below we've collated all the reading links for your convenience. 
+</p>
+
+<table border="2" class="icon-fixed-width" align="center" style="width: 100%;" cellpadding="3">
+<tbody>
+<tr>
+    <td>Date</td>
+    <td>Topic</td>
+    <td>Reading</td>
+</tr>
+{% for lect in site.lectures %}
+<tr>
+  <td>{{ lect.date  | date: "%a %-d/%-m" }}</td>
+  <td><i>{{ lect.title }}</i>
+    {% for matter in lect.materials %}
+    <br> {{ matter }}
+    {% endfor %}
+  </td>
+  <td>
+    {% if lect.show >= 1 %}
+        {% if lect.reading %}
+            {% assign first = 1 %}
+            {% for matter in lect.reading %}
+                {% if first == 1 %}
+                    {% assign first = 0 %}
+                {% else %}
+                    <br>
+                {% endif %}
+                {{ matter }}
+            {% endfor %}
+            <br>
+        {% endif %}
+    {% endif %}
+  </td>
+</tr>
+{% endfor %}
+</tbody>
+</table>

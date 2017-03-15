@@ -1,0 +1,13 @@
+{% for person in include.people %}
+<div class="media">
+  <a class="pull-left thumbnail" {%if person.url %} href="{{ person.url }}" {% endif %}>
+    <img class="media-object" src="img/person/{{ person.img }}.jpg" alt=""/>
+  </a>
+  <div class="media-body">
+    <strong>{{ person.name }}</strong>.
+    {{ person.tagline }}<br/>
+    {{ person.description }}
+  </div>
+</div>
+{% endfor %}
+

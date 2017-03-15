@@ -1,1 +1,268 @@
-theme: jekyll-theme-modernist
+exclude: ['README']
+timezone: Australia/Eastern
+lectures:
+   -
+    date: 2017-2-28
+    title: Introduction and Preprocessing
+    slides: 
+      - WSTA_L1a_introduction.pdf
+      - WSTA_L1b_preprocessing.pdf
+    reading:
+      - <a href="https://web.stanford.edu/~jurafsky/slp3/2.pdf">JM3 Ch. 2</a>
+    notebook: WSTA_N1B_preprocessing.ipynb
+    who: julian
+    show: 1
+   -
+    date: 2017-3-1
+    title: Text classification
+    slides: WSTA_L2_text_classification.pdf
+    reading:
+      - <a href="https://web.stanford.edu/~jurafsky/slp3/6.pdf">JM3 Ch. 6</a>, <a href="https://web.stanford.edu/~jurafsky/slp3/7.pdf">JM3 Ch. 7</a>
+    notebook: WSTA_N2_text_classification.ipynb
+    who: julian
+    show: 1
+   -
+    date: 2017-3-3
+    title: Python introduction (optional)
+    notebook: 
+        - Python-intro.ipynb
+        - words
+    who: jeremy
+    show: 1
+   -
+    date: 2017-3-6
+    title: "Workshop on preprocessing and text classification"
+    type: workshop
+    worksheet: workshop-02.pdf
+    who: tutors
+    show: 1
+   -
+    date: 2017-3-7
+    title: Part of Speech Tagging 
+    reading: JM2 Ch. 5.1-5.4,5.6-5.8
+    slides: WSTA_L3_part_of_speech_tagging.pdf
+    notebook: WSTA_N3_part_of_speech_tagging.ipynb
+    who: julian
+    show: 1
+   -
+    date: 2017-3-8
+    title: Probablisitic Sequence Modelling
+    slides: WSTA_L4_probabilistic_sequence_models.pdf
+    notebook: WSTA_N4_hidden_markov_models.ipynb
+    reading:
+        - JM2 Ch. 6
+        - Or alternatively <a href="http://cognet.mit.edu.ezp.lib.unimelb.edu.au/book/foundations-of-statistical-natural-language-processing">MS chapters 9 (9.1-9.2, 9.3.2) &amp; 10 (10.1-10.2)</a>
+        - Advanced (just for fun) <a href="http://www.ece.ucsb.edu/Faculty/Rabiner/ece259/Reprints/tutorial%20on%20hmm%20and%20applications.pdf">Rabiner's HMM tutorial</a>
+    who: trevor
+    show: 1 
+   -
+    date: 2017-3-13
+    title: "Workshop on part of speech tagging and probabilistic sequence modelling"
+    type: workshop
+    worksheet: workshop-03.pdf
+    who: tutors
+    show: 1
+   -
+    date: 2017-3-14
+    title: Context-Free Grammars
+    slides: WSTA_L5_context-free_grammars.pdf
+    notebook: WSTA_N5_context-free_grammars.ipynb 
+    reading: JM2 Ch. 12.1-12.5, JM2 Ch. 13.1-13.4
+    who: julian
+    show: 1
+   -
+    date: 2017-3-15
+    title: Probablisitic Parsing
+    slides: WSTA_L6_probabilistic_grammars.pdf
+    notebook: WSTA_N6_probabilistic_parsing.ipynb 
+    reading: JM2 Ch. 14
+    who: trevor
+    show: 1
+   -
+    date: 2017-3-20
+    title: "Workshop on context free grammars and probabilistic parsing"
+    type: workshop
+    worksheet: workshop-04.pdf
+    who: tutors
+    show: 2
+   -
+    date: 2017-3-21
+    title: Dependency parsing
+    slides: WSTA_L7_dependency_parsing.pdf
+    reading: <a href="https://web.stanford.edu/~jurafsky/slp3/14.pdf"> JM3 Ch. 14</a>
+    who: trevor
+    show: 2
+   -
+    date: 2017-3-22
+    title: Lexical semantics
+    slides: WSTA_L8_lexical_semantics.pdf
+    reading:
+      - JM2 Ch. 19.1-19.4
+      - JM2 Ch. 20.1-20.6
+    notebook: WSTA_N8_lexical_semantics.ipynb
+    who: julian
+    show: 2
+   -
+    date: 2017-3-26
+    title: "Workshop on dependacy parsing and lexical semantics"
+   -
+    date: 2017-3-27
+    title: Distributional semantics
+    slides: WSTA_L9_distributional_semantics.pdf
+    reading:
+      - <a href="https://web.stanford.edu/~jurafsky/slp3/15.pdf">JM3 Ch. 15</a>, <a href="https://web.stanford.edu/~jurafsky/slp3/16.pdf"> JM3 Ch. 16.1 </a>
+      - '(Optional) <a href="https://www.jair.org/media/2934/live-2934-4846-jair.pdf">From Frequency to Meaning: Vector Space Models of Semantics</a>'
+    notebook: WSTA_N9_distributional_semantics.ipynb
+    who: julian
+    show: 2
+
+   -
+    date: 2017-3-28
+    title: Word vector learning
+    slides: WSTA_L10_word_vector_learning.pdf
+    reading:
+      - <a href="https://web.stanford.edu/~jurafsky/slp3/16.pdf">JM3 16.2-16.3</a>
+      - '(Optional) <a href="http://papers.nips.cc/paper/5021-distributed-representations-of-words-and-phrases-and-their-compositionality.pdf">Word2vec: Distributed Representations of Words and Phrases and their Compositionality</a>'
+      - '(Optional) <a href="http://emnlp2014.org/papers/pdf/EMNLP2014162.pdf"> GloVe: Global Vectors for Word Representation </a>'
+      - '(Optional) <a href="http://papers.nips.cc/paper/5477-neural-word-embedding-as-implicit-matrix-factorization.pdf"> Neural word embedding as implicit matrix factorization </a>'
+    notebook: WSTA_N10_word_vectors.ipynb
+    who: trevor
+    show: 2
+   -
+    date: 2017-4-3
+    title: "Workshop on distributional semantics and word vector learning"
+    type: workshop
+    worksheet: workshop-05.pdf
+    who: tutors
+   -
+    date: 2017-4-4
+    title: Information Extraction
+    slides: WSTA_L11_information_extraction.pdf
+    reading: 
+      - <a href="https://web.stanford.edu/~jurafsky/slp3/21.pdf"> JM3 Ch. 21 </a>
+    who: karin
+    show: 2
+   -
+    date: 2017-4-5
+    title: Question Answering 
+    slides: WSTA_L12_question_answering.pdf
+    reading: 
+      - <a href="https://web.stanford.edu/~jurafsky/slp3/28.pdf"> JM3 Ch. 28 </a>
+      - (Optional) <a href="https://www.youtube.com/watch?v=kTXJCEvCDYk"> Video showing QA system beating Jeopardy Grandmaster</a>
+    who: julian
+    show: 2
+   -
+    date: 2017-4-10
+    title: "Workshop on information extraction and question answering"
+    type: workshop
+    worksheet: workshop-06.pdf
+    who: tutors
+   -
+    date: 2017-4-11
+    title: Discourse 
+    reading: 
+      - JM2 Ch. 21
+    slides: WSTA_L13_discourse.pdf
+    who: julian
+    show: 2
+   -
+    date: 2017-4-12
+    title: N-gram Language Models
+    slides: WSTA_L14_n-gram_language_models.pdf
+    notebook: WSTA_N14_n-gram_language_models.ipynb
+    reading: <a href="https://web.stanford.edu/~jurafsky/slp3/4.pdf"> JM3 Ch. 4 </a>
+    who: julian
+    show: 2
+   -
+    date: 2017-4-17
+    title: "Easter holiday break"
+   -
+    date: 2017-4-24
+    title: workshop on discourse and n-gram langauge models (ANZAC day holiday workshop schedule altered)
+   -
+    date: 2017-4-25
+    title: "ANZAC day holiday"
+   -
+    date: 2017-4-26
+    title: Information Retrieval -- boolean search and the vector space model 
+    slides: WSTA_L15_ir_vector_space_model.pdf
+    notebook: information_retreival.ipynb
+    reading:
+        - <a href="http://nlp.stanford.edu/IR-book/pdf/01bool.pdf">IIR Chapter 1 (1.1-1.3)</a>
+        - <a href="http://nlp.stanford.edu/IR-book/pdf/06vect.pdf">IIR Chapter 6 (6.2-6.4.2)</a>
+    who: trevor
+   -
+    date: 2017-5-1
+    title: "Workshop on information retrieval"
+    type: workshop
+    worksheet: workshop-09.pdf
+    who: tutors
+   -
+    date: 2017-5-2
+    title: Indexing and querying in the vector space model, and evaluation
+    slides: WSTA_L16_ir_vector_space_model_2.pdf
+    reading:
+        - <a href="http://nlp.stanford.edu/IR-book/pdf/07system.pdf">IIR Chapter 7 (7.1)</a>
+        - <a href="http://nlp.stanford.edu/IR-book/pdf/08eval.pdf">IIR Chapter 8</a>
+    who: trevor
+   -
+    date: 2017-5-3
+    title: Probabilistic IR -- the BM25 and language models
+    slides: WSTA_L17_ir_bm25_lm.pdf
+    reading:
+        - <a href="http://nlp.stanford.edu/IR-book/pdf/11prob.pdf">IIR Chapter 11 (11.4) </a>
+        - <a href="http://nlp.stanford.edu/IR-book/pdf/12lmodel.pdf">IIR Chapter 12 (all; but focus on 12.2)</a>
+    who: trevor
+   -
+    date: 2017-5-8
+    title: "Workshop on the vector space model in IR and Probabilistic IR"
+    type: workshop
+    worksheet: workshop-10.pdf
+    who: tutors
+   -
+    date: 2017-5-9
+    title: "Page-rank, HITS"
+   -
+    date: 2017-5-10
+    title: Machine Translation, word based models 
+    slides: WSTA_L18_page-rank.pdf
+    reading: 
+        - JM2 Ch. 25 (25.4-25.6; 25.11)
+        - (optional) <a href="readings/koehn-04.pdf"> Koehn Ch. 4 (4.1-4.3)</a>
+    notebook: machine_translation.ipynb
+    who: trevor  
+   -
+    date: 2017-5-15
+    title: "Workshop on Page-rank and word-based Machine Translation"
+    type: workshop
+    worksheet: workshop-11.pdf
+    who: tutors
+   -
+    date: 2017-5-16
+    title: Recursive Neural Network Language Models
+    slides: WSTA_L19_RNN-LMs.pdf
+    who: trevor
+   -
+    date: 2017-5-17
+    title: Machine translation, encoder-decoder
+    slides: WSTA_L20_machine_translation_encoder-decoder.pdf
+    who: trevor
+   -
+    date: 2017-5-22
+    title: "Workshop on RNN-LMs and Machine translation, encoder-decoder"
+    type: workshop
+    worksheet: workshop-12.pdf
+    who: tutors
+   -
+    date: 2017-5-23
+    title: Machine translation, evaluation
+    type: workshop
+    slides: WSTA_L21_machine_translation_evaluation.pdf
+    worksheet: workshop-12.pdf
+    who: daniel   
+   -
+    date: 2017-5-24
+    title: Subject review
+    slides: WSTA_L22_review.pdf
+    who: trevor and julian
+

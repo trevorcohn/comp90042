@@ -1,0 +1,51 @@
+---
+layout: clean
+title: Reading for COMP90042
+picture: matrix
+---
+<div class="page-header">
+  <h3>COMP90042: Who</h3>
+</div>
+
+<p>
+Coloured by person
+</p>
+
+<table border="2" class="icon-fixed-width" align="center" style="width: 100%;" cellpadding="3">
+<tbody>
+<tr>
+    <td>Date</td>
+    <td>Topic</td>
+    <td>Who</td>
+</tr>
+{% for lect in site.lectures %}
+<tr>
+{% if lect.who contains 'julian' %}
+    {% assign colour = "#FF0000" %}
+{% elsif lect.who contains 'trevor' %}
+    {% assign colour = "#00AA00" %}
+{% else %}
+    {% assign colour = "#0000FF" %}
+{% endif %}
+  <td>
+    <font color={{colour}}>
+        {{ lect.date  | date: "%a %-d/%-m" }}
+    </font>
+  </td>
+  <td> 
+    <font color={{colour}}>
+        <i>{{ lect.title }}</i>
+        {% for matter in lect.materials %}
+            <br> {{ matter }}
+        {% endfor %}
+    </font>
+  </td>
+  <td>
+    <font color={{colour}}>
+        {{ lect.who }}
+    </font>
+  </td>
+</tr>
+{% endfor %}
+</tbody>
+</table>

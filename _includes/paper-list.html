@@ -1,0 +1,31 @@
+<h5>{{ include.heading }}</h5>
+<ul>
+  {% for paper in site.papers %}
+    {% if paper.venue == include.venue %}
+      <li>
+      {% if paper.authors %}
+        {{ paper.authors | replace: 'With', 'Adam Lopez,' }}. 
+      {% else %}
+        Adam Lopez.
+      {% endif %}
+      {{ paper.year }}. 
+      {{ paper.title }}. 
+      In
+      {% case paper.paper-type %}
+        {% when "inproceedings" %}
+          <i>{{ paper.booktitle }}</i>.
+        {% when "article" %}
+            <i>{{ paper.journal }}</i>,
+            {% if paper.volume %}{{ paper.volume }}{% if paper.number %}({{ paper.number }}){% endif %}.{% endif %}
+            {% if paper.article%}Article {{ paper.article}}.{% endif %}
+      {% endcase %}
+      {% if paper.note %}
+        <p><b>
+      {{ paper.note }}
+        </b>
+      {% endif %}
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>
+

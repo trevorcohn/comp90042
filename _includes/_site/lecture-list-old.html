@@ -1,0 +1,88 @@
+<table border="2" class="icon-fixed-width" align="center" style="width: 100%;" cellpadding="3">
+<tbody>
+<tr>
+    <td>Date</td>
+    <td>Topic</td>
+    <td>Materials</td>
+</tr>
+<!--
+{% capture threshold %}{{'now' | date: "%s" | plus : 86400}}{% endcapture %}
+-->
+{% for lect in include.lectures %}
+<tr>
+  <!--
+  {% capture lecttime %}{{lect.date | date: '%s'}}{% endcapture %}
+  -->
+  <td>
+    {% if lect.type == "workshop" %}
+        beginning
+    {% endif %}
+       {{ lect.date  | date: "%a %-d/%-m" }}
+  </td>
+  <td><i>{{ lect.title }}</i>
+    {% for matter in lect.materials %}
+    <br> {{ matter }}
+    {% endfor %}
+  </td>
+    <!--{% if lecttime <= threshold %}-->
+  <td>
+    <!-- {% if lect.show == 1 %} -->
+<!--
+        {% if lect.slides %}
+            <b>Slides: </b>
+            {% assign first = 1 %}
+            {% for matter in lect.slides %}
+                {% if first == 1 %}
+                    {% assign first = 0 %}
+                {% else %}
+                    <br> &nbsp;
+                {% endif %}
+                <a href="slides/{{ matter }}">{{ matter }}</a>
+            {% endfor %}
+            <br>
+        {% endif %}
+        {% if lect.worksheet %}
+            <b>Worksheet: </b>
+            {% assign first = 1 %}
+            {% for matter in lect.worksheet %}
+                {% if first == 1 %}
+                    {% assign first = 0 %}
+                {% else %}
+                    <br> &nbsp;
+                {% endif %}
+                <a href="workshops/{{ matter }}">{{ matter }}</a>
+            {% endfor %}
+            <br>
+        {% endif %}
+        {% if lect.reading %}
+            <b>Reading: </b>
+            {% assign first = 1 %}
+            {% for matter in lect.reading %}
+                {% if first == 1 %}
+                    {% assign first = 0 %}
+                {% else %}
+                    <br> &nbsp;
+                {% endif %}
+                {{ matter }}
+            {% endfor %}
+            <br>
+        {% endif %}
+        {% if lect.notebook %}
+            <b>Notebook: </b>
+            {% assign first = 1 %}
+            {% for matter in lect.notebook %}
+                {% if first == 1 %}
+                    {% assign first = 0 %}
+                {% else %}
+                    <br> &nbsp;
+                {% endif %}
+                <a href="notebooks/{{ matter }}">{{ matter }}</a>
+            {% endfor %}
+            <br>
+        {% endif %} -->
+<!--    {% endif %} -->
+  </td>
+</tr>
+{% endfor %}
+</tbody>
+</table>

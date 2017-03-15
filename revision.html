@@ -1,0 +1,40 @@
+---
+layout: clean
+title: Revision materials for COMP90042
+picture: matrix
+materials:
+    - 
+        name: 2015 final exam
+        questions: https://course-work.unimelb.edu.au/handle/11343/90921
+        solutions: revision/solutions_2015.pdf
+    - 
+        name: additional practice questions (<b>updated 11/6</b>)
+        questions: revision/practice.pdf
+        solutions: revision/practice_solutions.pdf
+---
+<div class="page-header">
+  <h3>COMP90042: Revision Materials</h3>
+</div>
+
+<p>
+Here are some materials to assist with your revision. Please ensure you make an attempt at the questions before looking at the
+answers. This is a more effective way to study for retaining ideas and building your knowledge than simply studying  the
+answers directly.
+</p>
+
+<table border="2" class="icon-fixed-width" align="center" style="width: 100%;" cellpadding="3">
+<tbody>
+<tr>
+    <td>Name</td>
+    <td>Questions</td>
+    <td>Solutions</td>
+</tr>
+{% for lect in page.materials %}
+<tr>
+  <td><i>{{ lect.name }}</i></td>
+  <td><a href="{{lect.questions}}">questions</a></td>
+  <td><a href="{{lect.solutions}}">answers</a></td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
