@@ -7,7 +7,7 @@ git clone https://github.com/trevorcohn/comp90042.git
 cd comp90042
 git checkout gh-pages
 ```
-Now you can add files, edit etc, and when you push your changes these should be reflected shortly thereafter on the website [trevorcohn.github.io/comp90042].
+Now you can add files, edit etc, and when you push your changes these should be reflected shortly thereafter on the website [trevorcohn.github.io/comp90042](https://trevorcohn.github.io/comp90042).
 
 To test locally, run
 ```
