@@ -103,7 +103,7 @@ lectures:
       - JM2 Ch. 20.1-20.6
     notebook: WSTA_N8_lexical_semantics.ipynb
     who: julian
-    show: 2
+    show: 1
    -
     date: 2017-3-26
     title: "Workshop on dependacy parsing and lexical semantics"
