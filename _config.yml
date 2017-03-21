@@ -33,7 +33,9 @@ lectures:
     date: 2017-3-6
     title: "Workshop on preprocessing and text classification"
     type: workshop
-    worksheet: workshop-02.pdf
+    worksheet: 
+        - workshop-02.pdf
+        - solutions-02.pdf
     who: tutors
     show: 1
    -
