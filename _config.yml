@@ -105,14 +105,14 @@ lectures:
     who: julian
     show: 1
    -
-    date: 2017-3-26
+    date: 2017-3-27
     title: "Workshop on dependacy parsing and lexical semantics"
     type: workshop
     worksheet: workshop-05.pdf
     who: tutors
     show: 1
    -
-    date: 2017-3-27
+    date: 2017-3-28
     title: Distributional semantics
     slides: WSTA_L9_distributional_semantics.pdf
     reading:
@@ -120,10 +120,10 @@ lectures:
       - '(Optional) <a href="https://www.jair.org/media/2934/live-2934-4846-jair.pdf">From Frequency to Meaning: Vector Space Models of Semantics</a>'
     notebook: WSTA_N9_distributional_semantics.ipynb
     who: julian
-    show: 2
+    show: 1
 
    -
-    date: 2017-3-28
+    date: 2017-3-29
     title: Word vector learning
     slides: WSTA_L10_word_vector_learning.pdf
     reading:
