@@ -13,4 +13,4 @@ To test locally, run
 ```
 jekyll serve
 ```
-which runs 
+which runs a webserver on the local machine, reached via http://127.0.0.1:4000

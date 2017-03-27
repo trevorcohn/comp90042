@@ -33,7 +33,9 @@ lectures:
     date: 2017-3-6
     title: "Workshop on preprocessing and text classification"
     type: workshop
-    worksheet: workshop-02.pdf
+    worksheet: 
+        - workshop-02.pdf
+        - solutions-02.pdf
     who: tutors
     show: 1
    -
@@ -84,14 +86,14 @@ lectures:
     type: workshop
     worksheet: workshop-04.pdf
     who: tutors
-    show: 2
+    show: 1
    -
     date: 2017-3-21
     title: Dependency parsing
-    slides: WSTA_L7_dependency_parsing.pdf
+    slides: WSTA_L7_dependency.pdf
     reading: <a href="https://web.stanford.edu/~jurafsky/slp3/14.pdf"> JM3 Ch. 14</a>
     who: trevor
-    show: 2
+    show: 1
    -
     date: 2017-3-22
     title: Lexical semantics
@@ -101,7 +103,7 @@ lectures:
       - JM2 Ch. 20.1-20.6
     notebook: WSTA_N8_lexical_semantics.ipynb
     who: julian
-    show: 2
+    show: 1
    -
     date: 2017-3-26
     title: "Workshop on dependacy parsing and lexical semantics"
@@ -122,9 +124,7 @@ lectures:
     slides: WSTA_L10_word_vector_learning.pdf
     reading:
       - <a href="https://web.stanford.edu/~jurafsky/slp3/16.pdf">JM3 16.2-16.3</a>
-      - '(Optional) <a href="http://papers.nips.cc/paper/5021-distributed-representations-of-words-and-phrases-and-their-compositionality.pdf">Word2vec: Distributed Representations of Words and Phrases and their Compositionality</a>'
-      - '(Optional) <a href="http://emnlp2014.org/papers/pdf/EMNLP2014162.pdf"> GloVe: Global Vectors for Word Representation </a>'
-      - '(Optional) <a href="http://papers.nips.cc/paper/5477-neural-word-embedding-as-implicit-matrix-factorization.pdf"> Neural word embedding as implicit matrix factorization </a>'
+      - 'Advanced (just for fun) <a href="http://papers.nips.cc/paper/5021-distributed-representations-of-words-and-phrases-and-their-compositionality.pdf">Word2vec: Distributed Representations of Words and Phrases and their Compositionality</a>'
     notebook: WSTA_N10_word_vectors.ipynb
     who: trevor
     show: 2
