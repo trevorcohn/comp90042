@@ -76,7 +76,7 @@ lectures:
     date: 2017-3-15
     title: Probablisitic Parsing
     slides: WSTA_L6_probabilistic_grammars.pdf
-    notebook: WSTA_N6_probabilistic_parsing.ipynb 
+    notebook: WSTA_N6_probabilistic_parsing.ipynb
     reading: JM2 Ch. 14
     who: trevor
     show: 1
@@ -121,7 +121,6 @@ lectures:
     notebook: WSTA_N9_distributional_semantics.ipynb
     who: julian
     show: 1
-
    -
     date: 2017-3-29
     title: Word vector learning
@@ -131,7 +130,7 @@ lectures:
       - 'Advanced (just for fun) <a href="http://papers.nips.cc/paper/5021-distributed-representations-of-words-and-phrases-and-their-compositionality.pdf">Word2vec: Distributed Representations of Words and Phrases and their Compositionality</a>'
     notebook: WSTA_N10_word_vectors.ipynb
     who: trevor
-    show: 2
+    show: 1
    -
     date: 2017-4-3
     title: "Workshop on distributional semantics and word vector learning"
