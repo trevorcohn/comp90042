@@ -61,7 +61,9 @@ lectures:
     date: 2017-3-13
     title: "Workshop on part of speech tagging and probabilistic sequence modelling"
     type: workshop
-    worksheet: workshop-03.pdf
+    worksheet: 
+        - workshop-03.pdf
+        - solutions-03.pdf
     who: tutors
     show: 1
    -
@@ -84,7 +86,9 @@ lectures:
     date: 2017-3-20
     title: "Workshop on context free grammars and probabilistic parsing"
     type: workshop
-    worksheet: workshop-04.pdf
+    worksheet: 
+        - workshop-04.pdf
+        - solutions-04.pdf
     who: tutors
     show: 1
    -
@@ -135,8 +139,9 @@ lectures:
     date: 2017-4-3
     title: "Workshop on distributional semantics and word vector learning"
     type: workshop
-    worksheet: workshop-05.pdf
+    worksheet: workshop-06.pdf
     who: tutors
+    show: 1
    -
     date: 2017-4-4
     title: Information Extraction
