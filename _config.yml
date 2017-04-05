@@ -158,7 +158,7 @@ lectures:
       - <a href="https://web.stanford.edu/~jurafsky/slp3/28.pdf"> JM3 Ch. 28 </a>
       - (Optional) <a href="https://www.youtube.com/watch?v=kTXJCEvCDYk"> Video showing QA system beating Jeopardy Grandmaster</a>
     who: julian
-    show: 2
+    show: 1
    -
     date: 2017-4-10
     title: "Workshop on information extraction and question answering"
