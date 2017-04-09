@@ -161,10 +161,11 @@ lectures:
     show: 1
    -
     date: 2017-4-10
-    title: "Workshop on information extraction and question answering"
+    title: "Workshop on information extraction and question answering (workshop schedule altered for 14 Apr public holiday)"
     type: workshop
-    worksheet: workshop-06.pdf
+    worksheet: workshop-07.pdf
     who: tutors
+    show: 1
    -
     date: 2017-4-11
     title: Discourse
@@ -187,7 +188,10 @@ lectures:
     title: "Easter holiday break"
    -
     date: 2017-4-24
-    title: workshop on discourse and n-gram langauge models (ANZAC day holiday workshop schedule altered)
+    title: "Workshop on discourse and n-gram langauge models (workshop schedule altered for 25 Apr holiday)"
+    type: workshop
+    worksheet: workshop-08.pdf
+    who: tutors
    -
     date: 2017-4-25
     title: "ANZAC day holiday"
