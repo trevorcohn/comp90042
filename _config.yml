@@ -170,11 +170,11 @@ lectures:
     date: 2017-4-11
     title: Discourse
     reading: 
-      - JM2 Ch. 21.1-21.6
+      - JM2 Ch. 21.1-3, 21.5-21.6
       - <a href="ftp://ftp.db.toronto.edu/dist/gh/Feng+Hirst-ACL-2012.pdf">Text-level Discourse Parsing with Rich Linguistic Features</a>
     slides: WSTA_L13_discourse.pdf
     who: julian
-    show: 2
+    show: 1
    -
     date: 2017-4-12
     title: N-gram Language Models
