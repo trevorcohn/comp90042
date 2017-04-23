@@ -188,10 +188,11 @@ lectures:
     title: "Easter holiday break"
    -
     date: 2017-4-24
-    title: "Workshop on discourse and n-gram langauge models (workshop schedule altered for 25 Apr holiday)"
+    title: "Workshop on discourse and n-gram language models (workshop schedule altered for 25 Apr holiday)"
     type: workshop
     worksheet: workshop-08.pdf
     who: tutors
+    show: 1
    -
     date: 2017-4-25
     title: "ANZAC day holiday"
