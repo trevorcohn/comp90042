@@ -216,19 +216,21 @@ lectures:
    -
     date: 2017-5-2
     title: Indexing and querying in the vector space model, and evaluation
-    slides: WSTA_L16_ir_vector_space_model_2.pdf
+    slides: WSTA_L16_ir_vsm_eval.pdf
     reading:
         - <a href="http://nlp.stanford.edu/IR-book/pdf/07system.pdf">IIR Chapter 7 (7.1)</a>
         - <a href="http://nlp.stanford.edu/IR-book/pdf/08eval.pdf">IIR Chapter 8</a>
     who: trevor
+    show: 1
    -
     date: 2017-5-3
     title: Probabilistic IR -- the BM25 and language models
-    slides: WSTA_L17_ir_bm25_lm.pdf
+    slides: WSTA_L17_bm25_lmir.pdf
     reading:
         - <a href="http://nlp.stanford.edu/IR-book/pdf/11prob.pdf">IIR Chapter 11 (11.4) </a>
         - <a href="http://nlp.stanford.edu/IR-book/pdf/12lmodel.pdf">IIR Chapter 12 (all; but focus on 12.2)</a>
     who: trevor
+    show: 1
    -
     date: 2017-5-8
     title: "Workshop on the vector space model in IR and Probabilistic IR"
