@@ -216,7 +216,7 @@ lectures:
    -
     date: 2017-5-2
     title: Indexing and querying in the vector space model, and evaluation
-    slides: WSTA_L16_ir_vsm_eval.pdf
+    slides: WSTA_L16_vsm_eval.pdf
     reading:
         - <a href="http://nlp.stanford.edu/IR-book/pdf/07system.pdf">IIR Chapter 7 (7.1)</a>
         - <a href="http://nlp.stanford.edu/IR-book/pdf/08eval.pdf">IIR Chapter 8</a>
