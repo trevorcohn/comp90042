@@ -240,34 +240,30 @@ lectures:
    -
     date: 2017-5-9
     title: "Page-rank, HITS"
-   -
-    date: 2017-5-10
-    title: Machine Translation, word based models 
-    slides: WSTA_L18_page-rank.pdf
-    reading: 
-        - JM2 Ch. 25 (25.4-25.6; 25.11)
-        - (optional) <a href="readings/koehn-04.pdf"> Koehn Ch. 4 (4.1-4.3)</a>
-    notebook: machine_translation.ipynb
     who: trevor  
    -
+    date: 2017-5-10
+    title: "Compression for efficient IR"
+    who: matthias  
+   -
     date: 2017-5-15
-    title: "Workshop on Page-rank and word-based Machine Translation"
+    title: "Workshop on Page-rank and efficient IR"
     type: workshop
     worksheet: workshop-11.pdf
     who: tutors
    -
     date: 2017-5-16
-    title: Recursive Neural Network Language Models
-    slides: WSTA_L19_RNN-LMs.pdf
+    title: Machine Translation, word based alignment 
+    slides:
     who: trevor
    -
     date: 2017-5-17
-    title: Machine translation, encoder-decoder
-    slides: WSTA_L20_machine_translation_encoder-decoder.pdf
+    title: Machine translation, phrase based translation and neural encoder-decoder
+    slides: 
     who: trevor
    -
     date: 2017-5-22
-    title: "Workshop on RNN-LMs and Machine translation, encoder-decoder"
+    title: "Workshop on Machine translation"
     type: workshop
     worksheet: workshop-12.pdf
     who: tutors
@@ -275,7 +271,7 @@ lectures:
     date: 2017-5-23
     title: Machine translation, evaluation
     type: workshop
-    slides: WSTA_L21_machine_translation_evaluation.pdf
+    slides: 
     worksheet: workshop-12.pdf
     who: daniel   
    -
