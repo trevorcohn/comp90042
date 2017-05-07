@@ -237,6 +237,7 @@ lectures:
     type: workshop
     worksheet: workshop-10.pdf
     who: tutors
+    show: 1
    -
     date: 2017-5-9
     title: "Page-rank, HITS"
