@@ -240,8 +240,10 @@ lectures:
     show: 1
    -
     date: 2017-5-9
-    title: "Page-rank, HITS"
+    title: "The Web as a Graph -- Page-rank and HITS"
+    slides: WSTA_L18_web_graph.pdf
     who: trevor  
+    show: 1
    -
     date: 2017-5-10
     title: "Compression for efficient IR"
@@ -255,7 +257,7 @@ lectures:
    -
     date: 2017-5-16
     title: Machine Translation, word based alignment 
-    slides:
+    slides: WSTA_L20_machine_translation_word.pdf
     who: trevor
    -
     date: 2017-5-17
