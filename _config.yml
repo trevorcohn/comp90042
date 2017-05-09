@@ -112,7 +112,9 @@ lectures:
     date: 2017-3-27
     title: "Workshop on dependacy parsing and lexical semantics"
     type: workshop
-    worksheet: workshop-05.pdf
+    worksheet: 
+        - workshop-05.pdf
+        - solutions-05.pdf
     who: tutors
     show: 1
    -
@@ -139,7 +141,9 @@ lectures:
     date: 2017-4-3
     title: "Workshop on distributional semantics and word vector learning"
     type: workshop
-    worksheet: workshop-06.pdf
+    worksheet: 
+        - workshop-06.pdf
+        - solutions-06.pdf
     who: tutors
     show: 1
    -
@@ -163,7 +167,9 @@ lectures:
     date: 2017-4-10
     title: "Workshop on information extraction and question answering (workshop schedule altered for 14 Apr public holiday)"
     type: workshop
-    worksheet: workshop-07.pdf
+    worksheet: 
+        - workshop-07.pdf
+        - solutions-07.pdf
     who: tutors
     show: 1
    -
@@ -190,7 +196,9 @@ lectures:
     date: 2017-4-24
     title: "Workshop on discourse and n-gram language models (workshop schedule altered for 25 Apr holiday)"
     type: workshop
-    worksheet: workshop-08.pdf
+    worksheet: 
+        - workshop-08.pdf
+        - solutions-08.pdf
     who: tutors
     show: 1
    -
