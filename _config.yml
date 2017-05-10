@@ -242,11 +242,18 @@ lectures:
     date: 2017-5-9
     title: "The Web as a Graph -- Page-rank and HITS"
     slides: WSTA_L18_web_graph.pdf
+    reading:
+        - <a href="http://nlp.stanford.edu/IR-book/pdf/21link.pdf">IIR Chapter 21</a>
+        - <a href="http://nlp.stanford.edu/IR-book/pdf/18lsi.pdf">IIR Chapter 18 (Eigen decomposition review)</a>
     who: trevor  
     show: 1
    -
     date: 2017-5-10
-    title: "Compression for efficient IR"
+    title: "Index compression and efficient query processing"
+    slides: WSTA_L19_index_compression.pdf
+    reading:
+        - <a href="http://nlp.stanford.edu/IR-book/pdf/05comp.pdf">IIR Chapter 5 </a>
+        - see also papers referenced in slides
     who: matthias  
    -
     date: 2017-5-15
