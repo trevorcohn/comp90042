@@ -276,12 +276,19 @@ lectures:
     slides: WSTA_L20_machine_translation_word.pdf
     who: trevor
     show: 1
+    reading:
+        - JM2 Chapter 25, 25.4-25.6
+        - Koehn09 Chapter 4, 4.1-4.3
    -
     date: 2017-5-17
     title: Machine translation, phrase based translation and neural encoder-decoder
     slides: WSTA_L20_machine_translation_phrase.pdf
     who: trevor
     show: 1
+    reading:
+        - 'JM2 Chapter 25: 25.7-25.9'
+        - 'Koehn09 Chapters 5 and 6: 5.1-5.2 and 6.1-6.2'
+        - '(opt.) <a href="https://arxiv.org/abs/1703.01619">Neural Machine Translation and Sequence-to-sequence Models: A Tutorial, Neubig 2017</a>'
    -
     date: 2017-5-22
     title: "Workshop on Machine translation"
