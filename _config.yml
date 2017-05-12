@@ -275,11 +275,13 @@ lectures:
     title: Machine Translation, word based alignment 
     slides: WSTA_L20_machine_translation_word.pdf
     who: trevor
+    show: 1
    -
     date: 2017-5-17
     title: Machine translation, phrase based translation and neural encoder-decoder
-    slides: 
+    slides: WSTA_L20_machine_translation_phrase.pdf
     who: trevor
+    show: 1
    -
     date: 2017-5-22
     title: "Workshop on Machine translation"
