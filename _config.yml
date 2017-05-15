@@ -283,7 +283,7 @@ lectures:
    -
     date: 2017-5-17
     title: Machine translation, phrase based translation and neural encoder-decoder
-    slides: WSTA_L20_machine_translation_phrase.pdf
+    slides: WSTA_L21_machine_translation_phrase.pdf
     who: trevor
     show: 1
     reading:
