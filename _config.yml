@@ -266,10 +266,11 @@ lectures:
     show: 1
    -
     date: 2017-5-15
-    title: "Workshop on Page-rank and efficient IR"
+    title: "Workshop on Page-rank and index compression"
     type: workshop
     worksheet: workshop-11.pdf
     who: tutors
+    show: 1
    -
     date: 2017-5-16
     title: Machine Translation, word based alignment 
