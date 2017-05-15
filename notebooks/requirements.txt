@@ -1,0 +1,6 @@
+numpy
+scipy
+gensim
+nltk
+logging
+sklearn
