@@ -275,6 +275,7 @@ lectures:
     date: 2017-5-16
     title: Machine Translation, word based alignment 
     slides: WSTA_L20_machine_translation_word.pdf
+    notebook: WSTA_N20_machine_translation.ipynb
     who: trevor
     show: 1
     reading:
