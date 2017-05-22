@@ -297,6 +297,7 @@ lectures:
     type: workshop
     worksheet: workshop-12.pdf
     who: tutors
+    show: 1
    -
     date: 2017-5-23
     title: Machine translation, evaluation
