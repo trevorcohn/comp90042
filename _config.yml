@@ -280,7 +280,7 @@ lectures:
     show: 1
     reading:
         - JM2 Chapter 25, 25.4-25.6
-        - Koehn09 Chapter 4, 4.1-4.3
+        - '<a href="https://www-cambridge-org.ezp.lib.unimelb.edu.au/core/services/aop-cambridge-core/content/view/6F03C4290D7E98278BB2F6A8CA8F6D1F/9780511815829c4_p81-126_CBO.pdf/wordbased_models.pdf">Koehn09 Chapter 4</a>, 4.1-4.3'
    -
     date: 2017-5-17
     title: Machine translation, phrase based translation and neural encoder-decoder
@@ -289,7 +289,8 @@ lectures:
     show: 1
     reading:
         - 'JM2 Chapter 25: 25.7-25.9'
-        - 'Koehn09 Chapters 5 and 6: 5.1-5.2 and 6.1-6.2'
+        - '<a href="https://www-cambridge-org.ezp.lib.unimelb.edu.au/core/services/aop-cambridge-core/content/view/0B9EC28212FB7D15563B8F9B85A2870B/9780511815829c5_p127-154_CBO.pdf/phrasebased_models.pdf">Koehn09 Chapter 5</a>, 5.1-5.2'
+        - '<a href="https://www-cambridge-org.ezp.lib.unimelb.edu.au/core/services/aop-cambridge-core/content/view/50D47709AF26FAB89975797E5E5B6C12/9780511815829c6_p155-180_CBO.pdf/decoding.pdf">Koehn09 Chapter 6</a>, 6.1-6.2'
         - '(opt.) <a href="https://arxiv.org/abs/1703.01619">Neural Machine Translation and Sequence-to-sequence Models: A Tutorial, Neubig 2017</a>'
    -
     date: 2017-5-22
@@ -305,7 +306,8 @@ lectures:
     who: daniel   
     show: 1
     reading:
-        - 'Koehn09 Chapter 8, excluding 8.3'
+        - '<a href="https://www-cambridge-org.ezp.lib.unimelb.edu.au/core/services/aop-cambridge-core/content/view/EE4E5CFBA54664029CB9C1FE8D1A2A71/9780511815829c8_p217-246_CBO.pdf/evaluation.pdf">Koehn09
+Chapter 8</a>, whole chapter excluding 8.3'
    -
     date: 2017-5-24
     title: Subject review
