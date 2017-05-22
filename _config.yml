@@ -301,10 +301,11 @@ lectures:
    -
     date: 2017-5-23
     title: Machine translation, evaluation
-    type: workshop
-    slides: 
-    worksheet: workshop-12.pdf
+    slides:  WSTA_L22_machine_translation_evaluation.pdf
     who: daniel   
+    show: 1
+    reading:
+        - 'Koehn09 Chapter 8, excluding 8.3'
    -
     date: 2017-5-24
     title: Subject review
