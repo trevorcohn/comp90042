@@ -89,6 +89,8 @@ lectures:
     worksheet: 
         - workshop-04.pdf
         - solutions-04.pdf
+        - cyk-04.pdf
+        - earley-04.pdf
     who: tutors
     show: 1
    -

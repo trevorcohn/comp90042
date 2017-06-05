@@ -1,0 +1,432 @@
+\documentclass[a4paper]{article}
+
+\usepackage{fullpage,epsfig,graphicx,amsmath,amssymb,mathrsfs}
+\usepackage{url}
+\usepackage{palatino}
+\usepackage{multirow}
+\usepackage{xcolor}
+\usepackage{ulem}
+
+\begin{document}
+
+\begin{center}
+\Large{School of Computing and Information Systems}\\
+\Large{The University of Melbourne}\\
+\Large{COMP90042}\\
+\Large{\textsc{Web Search and Text Analysis} (Semester 1, 2017)}\\[1ex]
+\large{Sample Earley solution: Week 4}
+\end{center}
+
+\large{\textbf{Discussion}}
+\begin{enumerate}
+\item [2.] Consider the following simple \textbf{context--free grammar}:
+\begin{quote}
+\texttt{S -> NP VP}\\
+\texttt{VP -> V NP | V NP PP}\\
+\texttt{PP -> P NP}\\
+\texttt{V -> "saw" | "walked"}\\
+\texttt{NP -> "John" | "Bob" | Det N | Det N PP}\\
+\texttt{Det -> "a" | "an" | "the" | "my"}\\
+\texttt{N -> "man" | "cat" | "telescope" | "park"}\\
+\texttt{P -> "on" | "by" | "with"}
+\end{quote}
+\begin{enumerate}
+\item What changes need to be made to the grammar to make it suitable for \textbf{CYK parsing}?
+\item Using the \sout{CYK strategy and the above grammar in CNF} Earley strategy, parse the following sentences:
+\begin{enumerate}
+\item [(ii)] ``an park by Bob walked an park with Bob''
+\begin{itemize}
+\item This is the most interesting example; we will work through it in detail.
+\item For Earley, the chart is much simpler\footnote{In fact, with a little bookkeeping, the chart can be represented by a one-dimensional array.} than CYK: there is a chart position for each token in the sentence, plus one for the start of the sentence. Each chart position contains a list of rules (edges), where each rule (edge) has the following structure:
+\begin{quote}
+\texttt{A->B}$\cdot$\texttt{C [m]}
+\end{quote}
+Where \texttt{A} is a non-terminal, \texttt{B} and \texttt{C} are zero or more terminals or non-terminals\footnote{It is typically more efficient to transform the grammar so that the right-hand side of each rule consists of only non-terminals, or a single terminal. This is a simpler process than the conversion into Chomsky Normal Form.}, and \texttt{m} is the chart index where the edge was created\footnote{Sometimes this is written as \texttt{[m,n]}, where \texttt{n} is the (redundant) chart index of where the edge is currently stored.}.
+\item We initialise chart position 0 (for the start of the sentence) with the following dummy rule\footnote{Sometimes, this step is skipped, and we go straight to expanding the start symbol, in particular, when there is only a single start symbol.}:
+\begin{quote}
+$\gamma$\texttt{->}$\cdot$\texttt{S [0]}
+\end{quote}
+This rule (edge) indicates that we are going to start at the start of the sentence (position 0) and look for an \texttt{S} --- an entire sentence.
+\item Typically\footnote{This step can be skipped, at the cost of generating many trivially false hypotheses; for example, there is no need to posit that any of the (perhaps tens of thousands of) nouns could occur at a given chart position --- we can observe immediately which lexical item is present.}, we mark up each chart position with the possible parts--of--speech (POS) for each token in the sentence that the chart position corresponds to, with the following edge:
+\begin{quote}
+\texttt{A->x}$\cdot$\texttt{ [p-1]}
+\end{quote}
+where \texttt{x} is terminal corresponding to the $p^\textrm{th}$ token in the sentence, and \texttt{A} is a \textbf{pre-terminal} corresponding to the part--of--speech\footnote{However, sometimes grammars are simplified to abstract away from some of the sentence structure; as you can see here, \textit{Bob} is identified as an \texttt{NP}, which is really a simplification of the fact that a proper noun (\texttt{NNP}) can form an \texttt{NP} according to the rule \texttt{NP->NNP}.} of \texttt{x}.
+\item For the given sentence, the chart is consequently initialised as follows:
+\begin{table}[hp]
+\centering
+\begin{tabular}{l|l|l|l}
+\multicolumn{1}{c}{0} & \multicolumn{1}{c}{1} &\multicolumn{1}{c}{2} & \multicolumn{1}{c}{3} \\
+\hline
+$\gamma$\texttt{->}$\cdot$\texttt{S [0]} & \texttt{Det->"an"}$\cdot$\texttt{ [0]} & \texttt{N->"park"}$\cdot$\texttt{ [1]} & \texttt{P->"by"}$\cdot$\texttt{ [2]} \\
+\hline
+\multicolumn{1}{c}{4} & \multicolumn{1}{c}{5} & \multicolumn{1}{c}{6} & \multicolumn{1}{c}{7} \\
+\hline
+\texttt{NP->"Bob"}$\cdot$\texttt{ [3]} & \texttt{V->"walked"}$\cdot$\texttt{ [4]} & \texttt{Det->"an"}$\cdot$\texttt{ [5]} & \texttt{N->"park"}$\cdot$\texttt{ [6]} \\
+\hline
+\multicolumn{1}{c}{8} & \multicolumn{1}{c}{9} & \multicolumn{1}{c}{} & \\
+\hline
+\texttt{P->"with"}$\cdot$\texttt{ [7]} & \texttt{NP->"Bob"}$\cdot$\texttt{ [8]} & & \\
+\hline
+\end{tabular}
+\end{table}
+\item We will fill the chart from position 0 (the ``left'' side of the chart) to position 9 (the ``right''), in a top-down manner. To do this, we will process each edge, one--by--one, and then add more edges to the chart as required, according to either the Predictor or Completer\footnote{Assuming that we have transformed the grammar as described in footnote 2, and didn't skip initialising the entire chart with the (dotted) tokens from the sentence, as described in footnote 5, the dot can never precede a terminal, so we don't have to worry about the \textbf{Scanner} --- in effect we have already applied all of the Scan operations when we initialised the chart.}:
+\begin{itemize}
+\item \textbf{Predictor}: If we are processing an edge whose dot precedes a non-terminal, we add edges to this chart position according to the rules in the grammar with that non-terminal on the left-hand side (LHS), which have one or more non-terminals on the right-hand side\footnote{If we haven't initialised the table with our Scanner edges, or we haven't transformed the grammar according to footnote 2, then we also need to add edges for rules with terminals on the right-hand side.} (RHS).
+\item \textbf{Completer}: If we are processing an edge where nothing follows the dot, we have completed the non-terminal on the LHS of this rule. We then find the edge(s), located at the chart position indicated in brackets, which have the dot directly preceding that non-terminal, and move the dot along. (It sounds confusing, but the example below will help.)
+\end{itemize}
+\item In this case, we begin at chart position 0, which currently only contains the dummy rule $\gamma$\texttt{->}$\cdot${ S [0]}; the dot precedes a non-terminal (\texttt{S}), so we Predict according to the rule(s) in our grammar with \texttt{S} on the LHS. Here, there is only one such rule: \texttt{S->NP VP}, so we add this rule (as an edge) to our chart position 0 as follows:
+\begin{quote}
+\texttt{S->}$\cdot$\texttt{NP VP [0]}
+\end{quote}
+Whenever we Predict edges, the dot is placed at the beginning of the RHS (non-terminals), and the index in brackets is whichever chart position we are currently working on.
+\item We have now processed the edge $\gamma$\texttt{->}$\cdot$\texttt{S [0]}; we then proceed to the next edge in this chart position, namely, the edge we just added. Here, the dot proceeds \texttt{NP}, so we Predict according to the rule(s) in our grammar with \texttt{NP} on the LHS: this time, there are two:
+\begin{quote}
+\texttt{NP->}$\cdot$\texttt{Det N [0]}\\
+\texttt{NP->}$\cdot$\texttt{Det N PP [0]}
+\end{quote}
+\item We then process these two edges (with the Predictor), but in both cases, the \texttt{Det} rules only have terminals on the RHS. Now we have run out of edges in this chart position, so we will go on to the chart position 1 with the following chart:
+\begin{table}[hp]
+\centering
+\begin{tabular}{l|l|l|l}
+\multicolumn{1}{c}{0} & \multicolumn{1}{c}{1} &\multicolumn{1}{c}{2} & \multicolumn{1}{c}{3} \\
+\hline
+$\gamma$\texttt{->}$\cdot$\texttt{S [0]} & \texttt{Det->"an"}$\cdot$\texttt{ [0]} & \texttt{N->"park"}$\cdot$\texttt{ [1]} & \texttt{P->"by"}$\cdot$\texttt{ [2]} \\
+\texttt{S->}$\cdot$\texttt{NP VP [0]} & & & \\
+\texttt{NP->}$\cdot$\texttt{Det N [0]} & & & \\
+\texttt{NP->}$\cdot$\texttt{Det N PP [0]} & & & \\
+\hline
+\multicolumn{1}{c}{4} & \multicolumn{1}{c}{5} & \multicolumn{1}{c}{6} & \multicolumn{1}{c}{7} \\
+\hline
+\texttt{NP->"Bob"}$\cdot$\texttt{ [3]} & \texttt{V->"walked"}$\cdot$\texttt{ [4]} & \texttt{Det->"an"}$\cdot$\texttt{ [5]} & \texttt{N->"park"}$\cdot$\texttt{ [6]} \\
+\hline
+\multicolumn{1}{c}{8} & \multicolumn{1}{c}{9} & \multicolumn{1}{c}{} & \\
+\hline
+\texttt{P->"with"}$\cdot$\texttt{ [7]} & \texttt{NP->"Bob"}$\cdot$\texttt{ [8]} & & \\
+\hline
+\end{tabular}
+\end{table}
+\item Chart position 1 initially contains the edge \texttt{Det->"an"}$\cdot$\texttt{[0]}: we apply our Completer as follows:
+\begin{itemize}
+\item The index is [0], so we will look in chart position 0
+\item The non-terminal on the LHS is \texttt{Det}, so we will look for edges with the dot directly preceding \texttt{Det}
+\item There are two such edges: \texttt{NP->}$\cdot$\texttt{Det N [0]} and \texttt{NP->}$\cdot$\texttt{Det N PP [0]}
+\end{itemize}
+\item For each rule that we find, we move the dot so that it follows the \texttt{Det}, and then add this edge to the current chart position:
+\begin{quote}
+\texttt{NP->Det}$\cdot$\texttt{N [0]}\\
+\texttt{NP->Det}$\cdot$\texttt{N PP [0]}
+\end{quote}
+\item We then process these two rules: the dot precedes \texttt{N} (in both cases), but the rules where \texttt{N} is on the LHS only have terminals on the RHS. So, we're finished with this chart position:
+\begin{table}[hp]
+\centering
+\begin{tabular}{l|l|l|l}
+\multicolumn{1}{c}{0} & \multicolumn{1}{c}{1} &\multicolumn{1}{c}{2} & \multicolumn{1}{c}{3} \\
+\hline
+$\gamma$\texttt{->}$\cdot$\texttt{S [0]} & \texttt{Det->"an"}$\cdot$\texttt{ [0]} & \texttt{N->"park"}$\cdot$\texttt{ [1]} & \texttt{P->"by"}$\cdot$\texttt{ [2]} \\
+\texttt{S->}$\cdot$\texttt{NP VP [0]} & \texttt{NP->Det}$\cdot$\texttt{N [0]} & & \\
+\texttt{NP->}$\cdot$\texttt{Det N [0]} & \texttt{NP->Det}$\cdot$\texttt{N PP [0]} & & \\
+\texttt{NP->}$\cdot$\texttt{Det N PP [0]} & & & \\
+\hline
+\multicolumn{1}{c}{4} & \multicolumn{1}{c}{5} & \multicolumn{1}{c}{6} & \multicolumn{1}{c}{7} \\
+\hline
+\texttt{NP->"Bob"}$\cdot$\texttt{ [3]} & \texttt{V->"walked"}$\cdot$\texttt{ [4]} & \texttt{Det->"an"}$\cdot$\texttt{ [5]} & \texttt{N->"park"}$\cdot$\texttt{ [6]} \\
+\hline
+\multicolumn{1}{c}{8} & \multicolumn{1}{c}{9} & \multicolumn{1}{c}{} & \\
+\hline
+\texttt{P->"with"}$\cdot$\texttt{ [7]} & \texttt{NP->"Bob"}$\cdot$\texttt{ [8]} & & \\
+\hline
+\end{tabular}
+\end{table}
+\item Chart position 2 initially contains the edge \texttt{N->"park"}$\cdot$\texttt{[1]}: we apply our Completer as follows:
+\begin{itemize}
+\item The index is [1], so we will look in chart position 1
+\item The non-terminal on the LHS is \texttt{N}, so we will look for edges with the dot directly preceding \texttt{N}
+\item There are two such edges: \texttt{NP->Det}$\cdot$\texttt{N [0]} and \texttt{NP->Det}$\cdot$\texttt{N PP [0]}
+\end{itemize}
+\item We move the dot along, and then add the following two edges to this chart position: \texttt{NP->Det N}$\cdot$\texttt{ [0]} and \texttt{NP->Det N}$\cdot$\texttt{PP [0]}
+\item For the first of those edges, the dot is at the end, so we apply our Completer:
+\begin{itemize}
+\item The index is [0], so we will look in chart position 0
+\item The non-terminal on the LHS is \texttt{NP}, so we will look for edges with the dot directly preceding \texttt{NP}
+\item There is one such edge: \texttt{S->}$\cdot$\texttt{NP VP [0]}
+\end{itemize}
+\item We now add the edge \texttt{S->NP}$\cdot$\texttt{VP [0]} to this position.
+\item Next, we have the edge \texttt{NP->Det N}$\cdot$\texttt{PP [0]} --- the dot precedes \texttt{PP}, so we Predict according to the grammar's only rule with \texttt{PP} on the LHS to add the edge \texttt{PP->}$\cdot$\texttt{P NP [2]}
+\item Now, we process the edge \texttt{S->NP}$\cdot$\texttt{VP [0]} to Predict \texttt{VP->}$\cdot$\texttt{V NP [2]} and \texttt{VP->}$\cdot$\texttt{V NP PP [2]}
+\item The remaining edges don't allow us to Predict anything (\texttt{P} and \texttt{V} are only on the LHS of rules with terminals on the RHS). So, we are done with this chart position:
+\begin{table}[hp]
+\centering
+\begin{tabular}{l|l|l|l}
+\multicolumn{1}{c}{0} & \multicolumn{1}{c}{1} &\multicolumn{1}{c}{2} & \multicolumn{1}{c}{3} \\
+\hline
+$\gamma$\texttt{->}$\cdot$\texttt{S [0]} & \texttt{Det->"an"}$\cdot$\texttt{ [0]} & \texttt{N->"park"}$\cdot$\texttt{ [1]} & \texttt{P->"by"}$\cdot$\texttt{ [2]} \\
+\texttt{S->}$\cdot$\texttt{NP VP [0]} & \texttt{NP->Det}$\cdot$\texttt{N [0]} & \texttt{NP->Det N}$\cdot$\texttt{ [0]} & \\
+\texttt{NP->}$\cdot$\texttt{Det N [0]} & \texttt{NP->Det}$\cdot$\texttt{N PP [0]} & \texttt{NP->Det N}$\cdot$\texttt{PP [0]} & \\
+\texttt{NP->}$\cdot$\texttt{Det N PP [0]} & & \texttt{S->NP}$\cdot$\texttt{VP [0]} & \\
+ & & \texttt{PP->}$\cdot$\texttt{P NP [2]} & \\
+ & & \texttt{VP->}$\cdot$\texttt{V NP [2]} & \\
+ & & \texttt{VP->}$\cdot$\texttt{V NP PP [2]} & \\
+\hline
+\multicolumn{1}{c}{4} & \multicolumn{1}{c}{5} & \multicolumn{1}{c}{6} & \multicolumn{1}{c}{7} \\
+\hline
+\texttt{NP->"Bob"}$\cdot$\texttt{ [3]} & \texttt{V->"walked"}$\cdot$\texttt{ [4]} & \texttt{Det->"an"}$\cdot$\texttt{ [5]} & \texttt{N->"park"}$\cdot$\texttt{ [6]} \\
+\hline
+\multicolumn{1}{c}{8} & \multicolumn{1}{c}{9} & \multicolumn{1}{c}{} & \\
+\hline
+\texttt{P->"with"}$\cdot$\texttt{ [7]} & \texttt{NP->"Bob"}$\cdot$\texttt{ [8]} & & \\
+\hline
+\end{tabular}
+\end{table}
+\item Before we move on, let's look at what the chart is telling us: we believe that we might have just completed an \texttt{NP} --- in which case, we've completed the first part of our \texttt{S}, and now we're looking for a \texttt{VP} which must begin with a \texttt{V}; or, we haven't finished our \texttt{NP} yet, because it might also have a \texttt{PP} --- in which case, we're looking for a \texttt{P} next.
+\item Chart position 3 initially contains the edge \texttt{P->"by"}$\cdot$\texttt{[2]}: we apply our Completer as follows:
+\begin{itemize}
+\item The index is [2], so we will look in chart position 2
+\item The non-terminal on the LHS is \texttt{P}, so we will look for edges with the dot directly preceding \texttt{P}
+\item There is one such edge: \texttt{PP->}$\cdot$\texttt{P NP [2]}
+\end{itemize}
+\item Before we move on, you might like to observe that the edges from chart position 2 that were expecting a \texttt{V} will never generate any more edges later in the chart; this procedure (using the tokens that we've actually seen to reject hypothetical analyses) helps to keep the chart from exploding in size.
+\item After moving the dot after the \texttt{P} in the edge above, we Predict the following two rules: \texttt{NP->}$\cdot$\texttt{Det N [3]} and \texttt{NP->}$\cdot$\texttt{Det N PP [3]}
+\item The current chart follows overleaf.
+\begin{table}[ht]
+\centering
+\begin{tabular}{l|l|l|l}
+\multicolumn{1}{c}{0} & \multicolumn{1}{c}{1} &\multicolumn{1}{c}{2} & \multicolumn{1}{c}{3} \\
+\hline
+$\gamma$\texttt{->}$\cdot$\texttt{S [0]} & \texttt{Det->"an"}$\cdot$\texttt{ [0]} & \texttt{N->"park"}$\cdot$\texttt{ [1]} & \texttt{P->"by"}$\cdot$\texttt{ [2]} \\
+\texttt{S->}$\cdot$\texttt{NP VP [0]} & \texttt{NP->Det}$\cdot$\texttt{N [0]} & \texttt{NP->Det N}$\cdot$\texttt{ [0]} & \texttt{PP->P}$\cdot$\texttt{NP [2]} \\
+\texttt{NP->}$\cdot$\texttt{Det N [0]} & \texttt{NP->Det}$\cdot$\texttt{N PP [0]} & \texttt{NP->Det N}$\cdot$\texttt{PP [0]} & \texttt{NP->}$\cdot$\texttt{Det N [3]} \\
+\texttt{NP->}$\cdot$\texttt{Det N PP [0]} & & \texttt{S->NP}$\cdot$\texttt{VP [0]} & \texttt{NP->}$\cdot$\texttt{Det N PP [3]} \\
+ & & \texttt{PP->}$\cdot$\texttt{P NP [2]} & \\
+ & & \texttt{VP->}$\cdot$\texttt{V NP [2]} & \\
+ & & \texttt{VP->}$\cdot$\texttt{V NP PP [2]} & \\
+\hline
+\multicolumn{1}{c}{4} & \multicolumn{1}{c}{5} & \multicolumn{1}{c}{6} & \multicolumn{1}{c}{7} \\
+\hline
+\texttt{NP->"Bob"}$\cdot$\texttt{ [3]} & \texttt{V->"walked"}$\cdot$\texttt{ [4]} & \texttt{Det->"an"}$\cdot$\texttt{ [5]} & \texttt{N->"park"}$\cdot$\texttt{ [6]} \\
+\hline
+\multicolumn{1}{c}{8} & \multicolumn{1}{c}{9} & \multicolumn{1}{c}{} & \\
+\hline
+\texttt{P->"with"}$\cdot$\texttt{ [7]} & \texttt{NP->"Bob"}$\cdot$\texttt{ [8]} & & \\
+\hline
+\end{tabular}
+\end{table}
+\item Chart position 4 initially contains the edge \texttt{NP->"Bob"}$\cdot$\texttt{[3]}:
+\begin{itemize}
+\item We will look in chart position 3, for edges with the dot directly preceding \texttt{NP}
+\item There is one such edge: \texttt{PP->P}$\cdot$\texttt{NP [2]}
+\end{itemize}
+\item Moving the dot after the \texttt{NP} allows us to Complete that \texttt{PP} edge, which in turn allows us to Complete the edge \texttt{NP->Det N PP [0]} at position 2.
+\item Now we have completed the initial \texttt{NP} in our \texttt{S} (\texttt{S->NP}$\cdot$\texttt{VP [0]}), so we Predict \texttt{VP->}$\cdot$\texttt{V NP [4]} and \texttt{VP->}$\cdot$\texttt{V NP PP [4]}, to arrive at the following chart:
+\begin{table}[ht]
+\centering
+\begin{tabular}{l|l|l|l}
+\multicolumn{1}{c}{0} & \multicolumn{1}{c}{1} &\multicolumn{1}{c}{2} & \multicolumn{1}{c}{3} \\
+\hline
+$\gamma$\texttt{->}$\cdot$\texttt{S [0]} & \texttt{Det->"an"}$\cdot$\texttt{ [0]} & \texttt{N->"park"}$\cdot$\texttt{ [1]} & \texttt{P->"by"}$\cdot$\texttt{ [2]} \\
+\texttt{S->}$\cdot$\texttt{NP VP [0]} & \texttt{NP->Det}$\cdot$\texttt{N [0]} & \texttt{NP->Det N}$\cdot$\texttt{ [0]} & \texttt{PP->P}$\cdot$\texttt{NP [2]} \\
+\texttt{NP->}$\cdot$\texttt{Det N [0]} & \texttt{NP->Det}$\cdot$\texttt{N PP [0]} & \texttt{NP->Det N}$\cdot$\texttt{PP [0]} & \texttt{NP->}$\cdot$\texttt{Det N [3]} \\
+\texttt{NP->}$\cdot$\texttt{Det N PP [0]} & & \texttt{S->NP}$\cdot$\texttt{VP [0]} & \texttt{NP->}$\cdot$\texttt{Det N PP [3]} \\
+ & & \texttt{PP->}$\cdot$\texttt{P NP [2]} & \\
+ & & \texttt{VP->}$\cdot$\texttt{V NP [2]} & \\
+ & & \texttt{VP->}$\cdot$\texttt{V NP PP [2]} & \\
+\hline
+\multicolumn{1}{c}{4} & \multicolumn{1}{c}{5} & \multicolumn{1}{c}{6} & \multicolumn{1}{c}{7} \\
+\hline
+\texttt{NP->"Bob"}$\cdot$\texttt{ [3]} & \texttt{V->"walked"}$\cdot$\texttt{ [4]} & \texttt{Det->"an"}$\cdot$\texttt{ [5]} & \texttt{N->"park"}$\cdot$\texttt{ [6]} \\
+\texttt{PP->P NP}$\cdot$\texttt{ [2]} & & & \\
+\texttt{NP->Det N PP}$\cdot$\texttt{ [0]} & & & \\
+\texttt{S->NP}$\cdot$\texttt{VP [0]} & & & \\
+\texttt{VP->}$\cdot$\texttt{V NP [4]} & & & \\
+\texttt{VP->}$\cdot$\texttt{V NP PP [4]} & & & \\
+\hline
+\multicolumn{1}{c}{8} & \multicolumn{1}{c}{9} & \multicolumn{1}{c}{} & \\
+\hline
+\texttt{P->"with"}$\cdot$\texttt{ [7]} & \texttt{NP->"Bob"}$\cdot$\texttt{ [8]} & & \\
+\hline
+\end{tabular}
+\end{table}
+\item Chart position 5 initially contains the edge \texttt{V->"walked"}$\cdot$\texttt{[4]}:
+\begin{itemize}
+\item We will look in chart position 4, for edges with the dot directly preceding \texttt{V}
+\item There are two such edges: \texttt{VP->}$\cdot$\texttt{V NP [4]} and \texttt{VP->}$\cdot$\texttt{V NP PP [4]}
+\end{itemize}
+\item For the first of these edges, moving the dot along allows us to Predict an \texttt{NP}, and add the following edges to the chart: \texttt{NP->}$\cdot$\texttt{Det N [5]} and \texttt{NP->}$\cdot$\texttt{Det N PP [5]}
+\item For the second of those edge, moving the dot means that we \textbf{also} Predict an \texttt{NP}, which would mean that we would add exactly the same rules to the chart for this edge. By convention, we only store a single copy of each edge in the chart\footnote{Alternatively, we could store multiple copies of an edge, with some indication of which edge in the chart caused its creation. This means that the parses for highly ambiguous sentences can be found more efficiently --- unfortunately, it is exactly that property that causes the chart to grow very quickly. Generally, the space--for--time tradeoff is seen as undesirable here.} --- this means that later, when we are recovering the parse(s) from the chart, we will need to check all of the edges in each chart position to determine which one(s) generated each edge in the parse.
+\item So, the chart now (suitably interpretting the two \texttt{NP} edges in position 5) looks like:
+\begin{table}[ht]
+\centering
+\begin{tabular}{l|l|l|l}
+\multicolumn{1}{c}{0} & \multicolumn{1}{c}{1} &\multicolumn{1}{c}{2} & \multicolumn{1}{c}{3} \\
+\hline
+$\gamma$\texttt{->}$\cdot$\texttt{S [0]} & \texttt{Det->"an"}$\cdot$\texttt{ [0]} & \texttt{N->"park"}$\cdot$\texttt{ [1]} & \texttt{P->"by"}$\cdot$\texttt{ [2]} \\
+\texttt{S->}$\cdot$\texttt{NP VP [0]} & \texttt{NP->Det}$\cdot$\texttt{N [0]} & \texttt{NP->Det N}$\cdot$\texttt{ [0]} & \texttt{PP->P}$\cdot$\texttt{NP [2]} \\
+\texttt{NP->}$\cdot$\texttt{Det N [0]} & \texttt{NP->Det}$\cdot$\texttt{N PP [0]} & \texttt{NP->Det N}$\cdot$\texttt{PP [0]} & \texttt{NP->}$\cdot$\texttt{Det N [3]} \\
+\texttt{NP->}$\cdot$\texttt{Det N PP [0]} & & \texttt{S->NP}$\cdot$\texttt{VP [0]} & \texttt{NP->}$\cdot$\texttt{Det N PP [3]} \\
+ & & \texttt{PP->}$\cdot$\texttt{P NP [2]} & \\
+ & & \texttt{VP->}$\cdot$\texttt{V NP [2]} & \\
+ & & \texttt{VP->}$\cdot$\texttt{V NP PP [2]} & \\
+\hline
+\multicolumn{1}{c}{4} & \multicolumn{1}{c}{5} & \multicolumn{1}{c}{6} & \multicolumn{1}{c}{7} \\
+\hline
+\texttt{NP->"Bob"}$\cdot$\texttt{ [3]} & \texttt{V->"walked"}$\cdot$\texttt{ [4]} & \texttt{Det->"an"}$\cdot$\texttt{ [5]} & \texttt{N->"park"}$\cdot$\texttt{ [6]} \\
+\texttt{PP->P NP}$\cdot$\texttt{ [2]} & \texttt{VP->V}$\cdot$\texttt{NP [4]} & & \\
+\texttt{NP->Det N PP}$\cdot$\texttt{ [0]} & \texttt{VP->V}$\cdot$\texttt{NP PP [4]} & & \\
+\texttt{S->NP}$\cdot$\texttt{VP [0]} & \texttt{NP->}$\cdot$\texttt{Det N [5]} & & \\
+\texttt{VP->}$\cdot$\texttt{V NP [4]} & \texttt{NP->}$\cdot$\texttt{Det N PP [5]} & & \\
+\texttt{VP->}$\cdot$\texttt{V NP PP [4]} & & & \\
+\hline
+\multicolumn{1}{c}{8} & \multicolumn{1}{c}{9} & \multicolumn{1}{c}{} & \\
+\hline
+\texttt{P->"with"}$\cdot$\texttt{ [7]} & \texttt{NP->"Bob"}$\cdot$\texttt{ [8]} & & \\
+\hline
+\end{tabular}
+\end{table}
+\item Chart position 6 initially contains the edge \texttt{Det->"an"}$\cdot$\texttt{[5]}:
+\begin{itemize}
+\item We will look in chart position 5, for edges with the dot directly preceding \texttt{Det}
+\item There are two such edges: \texttt{NP->}$\cdot$\texttt{Det N [5]} and \texttt{NP->}$\cdot$\texttt{Det N PP [5]} (each has two copies, but we ignore that for now)
+\end{itemize}
+\item We add the following two edges to the chart: \texttt{NP->Det}$\cdot$\texttt{N [5]} and \texttt{NP->Det}$\cdot$\texttt{N PP [5]}
+\item Chart position 7 initially contains the edge \texttt{N->"park"}$\cdot$\texttt{[6]}:
+\begin{itemize}
+\item We will look in chart position 6, for edges with the dot directly preceding \texttt{N}
+\item There are two such edges: \texttt{NP->Det}$\cdot$\texttt{N [5]} and \texttt{NP->Det}$\cdot$\texttt{N PP [5]}
+\end{itemize}
+\item For the first of those edges, we Complete the \texttt{NP} from chart position 5, which means that we add the following edges: \texttt{VP->V NP}$\cdot$\texttt{ [4]} and \texttt{VP->V NP}$\cdot$\texttt{PP [4]}
+\item For the second of those edges, we Predict the \texttt{PP} to add the following edge: \texttt{PP->}$\cdot$\texttt{P NP [7]}
+\item For the next three edges, the first (\texttt{VP->V NP}$\cdot$\texttt{ [4]}) allows us to Complete the \texttt{VP} at chart position 4, giving us the edge \texttt{S->NP VP}$\cdot$\texttt{ [0]} --- however, we don't want to process the dummy $\gamma$ because we haven't seen all of the sentence input yet. (Effectively, we've observed that the proper prefix ``an park by Bob walked an park'' is a sentence according to this grammar.)
+\item The second allows us to Predict a \texttt{PP} here, which would duplicate the edge \texttt{PP->}$\cdot$\texttt{P NP [7]}.
+\item Predicting from that edge doesn't give us any new edges (because \texttt{P} is on the LHS of rules with only terminals on the RHS). The chart is now:
+\begin{table}[ht]
+\centering
+\begin{tabular}{l|l|l|l}
+\multicolumn{1}{c}{0} & \multicolumn{1}{c}{1} &\multicolumn{1}{c}{2} & \multicolumn{1}{c}{3} \\
+\hline
+$\gamma$\texttt{->}$\cdot$\texttt{S [0]} & \texttt{Det->"an"}$\cdot$\texttt{ [0]} & \texttt{N->"park"}$\cdot$\texttt{ [1]} & \texttt{P->"by"}$\cdot$\texttt{ [2]} \\
+\texttt{S->}$\cdot$\texttt{NP VP [0]} & \texttt{NP->Det}$\cdot$\texttt{N [0]} & \texttt{NP->Det N}$\cdot$\texttt{ [0]} & \texttt{PP->P}$\cdot$\texttt{NP [2]} \\
+\texttt{NP->}$\cdot$\texttt{Det N [0]} & \texttt{NP->Det}$\cdot$\texttt{N PP [0]} & \texttt{NP->Det N}$\cdot$\texttt{PP [0]} & \texttt{NP->}$\cdot$\texttt{Det N [3]} \\
+\texttt{NP->}$\cdot$\texttt{Det N PP [0]} & & \texttt{S->NP}$\cdot$\texttt{VP [0]} & \texttt{NP->}$\cdot$\texttt{Det N PP [3]} \\
+ & & \texttt{PP->}$\cdot$\texttt{P NP [2]} & \\
+ & & \texttt{VP->}$\cdot$\texttt{V NP [2]} & \\
+ & & \texttt{VP->}$\cdot$\texttt{V NP PP [2]} & \\
+\hline
+\multicolumn{1}{c}{4} & \multicolumn{1}{c}{5} & \multicolumn{1}{c}{6} & \multicolumn{1}{c}{7} \\
+\hline
+\texttt{NP->"Bob"}$\cdot$\texttt{ [3]} & \texttt{V->"walked"}$\cdot$\texttt{ [4]} & \texttt{Det->"an"}$\cdot$\texttt{ [5]} & \texttt{N->"park"}$\cdot$\texttt{ [6]} \\
+\texttt{PP->P NP}$\cdot$\texttt{ [2]} & \texttt{VP->V}$\cdot$\texttt{NP [4]} & \texttt{NP->Det}$\cdot$\texttt{N [5]} & \texttt{NP->Det N}$\cdot$\texttt{ [5]} \\
+\texttt{NP->Det N PP}$\cdot$\texttt{ [0]} & \texttt{VP->V}$\cdot$\texttt{NP PP [4]} & \texttt{NP->Det}$\cdot$\texttt{N PP [5]} & \texttt{NP->Det N}$\cdot$\texttt{PP [5]} \\
+\texttt{S->NP}$\cdot$\texttt{VP [0]} & \texttt{NP->}$\cdot$\texttt{Det N [5]} & & \texttt{VP->V NP}$\cdot$\texttt{ [4]} \\
+\texttt{VP->}$\cdot$\texttt{V NP [4]} & \texttt{NP->}$\cdot$\texttt{Det N PP [5]} & & \texttt{VP->V NP}$\cdot$\texttt{PP [4]} \\
+\texttt{VP->}$\cdot$\texttt{V NP PP [4]} & & & \texttt{PP->}$\cdot$\texttt{P NP [7]} \\
+ & & & \texttt{S->NP VP}$\cdot$\texttt{ [0]} \\
+\hline
+\multicolumn{1}{c}{8} & \multicolumn{1}{c}{9} & \multicolumn{1}{c}{} & \\
+\hline
+\texttt{P->"with"}$\cdot$\texttt{ [7]} & \texttt{NP->"Bob"}$\cdot$\texttt{ [8]} & & \\
+\hline
+\end{tabular}
+\end{table}
+\item Chart position 8 initially contains the edge \texttt{P->"with"}$\cdot$\texttt{[7]}:
+\begin{itemize}
+\item We will look in chart position 7, for edges with the dot directly preceding \texttt{P}
+\item There is one such edge: \texttt{PP->}$\cdot$\texttt{P NP [7]}
+\end{itemize}
+\item We then Predict the \texttt{NP}, and add the following edges: \texttt{NP->}$\cdot$\texttt{Det N [8]} and \texttt{NP->}$\cdot$\texttt{Det N PP [8]}
+\item Chart position 9 initially contains the edge \texttt{NP->"Bob"}$\cdot$\texttt{[8]}:
+\begin{itemize}
+\item We will look in chart position 8, for edges with the dot directly preceding \texttt{NP}
+\item There is one such edge: \texttt{PP->P}$\cdot$\texttt{NP [7]}
+\end{itemize}
+\item We Complete the \texttt{PP} from chart position 7, which was generated by two different rules there: one an \texttt{NP} (\texttt{NP->Det N PP}$\cdot$\texttt{ [5]}), and one a \texttt{VP} (\texttt{VP->V NP PP}$\cdot$\texttt{ [4]}).
+\item The \texttt{NP}, in turn, adds the following edges from chart position 5: \texttt{VP->V NP}$\cdot$\texttt{ [4]} and \texttt{VP-> V NP}$\cdot$\texttt{PP [4]}
+\item The \texttt{VP} (from completing the \texttt{PP} at 7) gives us an entire \texttt{S} (\texttt{S->NP VP}$\cdot$\texttt{ [0]}), which will correspond to a parse for this sentence.
+\item The \texttt{VP} (from completing the \texttt{NP} here) gives us a second parse.
+\item We also Predict a \texttt{PP} (\texttt{PP->}$\cdot$\texttt{P NP [9]}), but it won't go anywhere because we've run out of input.
+\item We can also Complete the dummy rule $\gamma$\texttt{->S}$\cdot$ for completeness.
+\item The full chart follows below. Recovering the parse(s), with this representation of edges, is somewhat horrible, so we will not go into detail.
+\item You might like to compare the (coloured) edges on the chart with the parses below to confirm the structure:
+\end{itemize}
+\end{enumerate}
+\end{enumerate}
+
+\begin{table}[t]
+\centering
+\begin{tabular}{l|l|l|l}
+\multicolumn{1}{c}{0} & \multicolumn{1}{c}{1} &\multicolumn{1}{c}{2} & \multicolumn{1}{c}{3} \\
+\hline
+\textcolor{purple}{$\gamma$\texttt{->}$\cdot$\texttt{S [0]}} & \textcolor{purple}{\texttt{Det->"an"}$\cdot$\texttt{ [0]}} & \textcolor{purple}{\texttt{N->"park"}$\cdot$\texttt{ [1]}} & \textcolor{purple}{\texttt{P->"by"}$\cdot$\texttt{ [2]}} \\
+\textcolor{purple}{\texttt{S->}$\cdot$\texttt{NP VP [0]}} & \texttt{NP->Det}$\cdot$\texttt{N [0]} & \texttt{NP->Det N}$\cdot$\texttt{ [0]} & \textcolor{purple}{\texttt{PP->P}$\cdot$\texttt{NP [2]}} \\
+\texttt{NP->}$\cdot$\texttt{Det N [0]} & \textcolor{purple}{\texttt{NP->Det}$\cdot$\texttt{N PP [0]}} & \textcolor{purple}{\texttt{NP->Det N}$\cdot$\texttt{PP [0]}} & \texttt{NP->}$\cdot$\texttt{Det N [3]} \\
+\textcolor{purple}{\texttt{NP->}$\cdot$\texttt{Det N PP [0]}} & & \texttt{S->NP}$\cdot$\texttt{VP [0]} & \texttt{NP->}$\cdot$\texttt{Det N PP [3]} \\
+ & & \textcolor{purple}{\texttt{PP->}$\cdot$\texttt{P NP [2]}} & \\
+ & & \texttt{VP->}$\cdot$\texttt{V NP [2]} & \\
+ & & \texttt{VP->}$\cdot$\texttt{V NP PP [2]} & \\
+\hline
+\multicolumn{1}{c}{4} & \multicolumn{1}{c}{5} & \multicolumn{1}{c}{6} & \multicolumn{1}{c}{7} \\
+\hline
+\textcolor{purple}{\texttt{NP->"Bob"}$\cdot$\texttt{ [3]}} & \textcolor{purple}{\texttt{V->"walked"}$\cdot$\texttt{ [4]}} & \textcolor{purple}{\texttt{Det->"an"}$\cdot$\texttt{ [5]}} & \textcolor{purple}{\texttt{N->"park"}$\cdot$\texttt{ [6]}} \\
+\textcolor{purple}{\texttt{PP->P NP}$\cdot$\texttt{ [2]}} & \textcolor{red}{\texttt{VP->V}$\cdot$\texttt{NP [4]}} & \textcolor{blue}{\texttt{NP->Det}$\cdot$\texttt{N [5]}} & \textcolor{blue}{\texttt{NP->Det N}$\cdot$\texttt{ [5]}} \\
+\textcolor{purple}{\texttt{NP->Det N PP}$\cdot$\texttt{ [0]}} & \textcolor{blue}{\texttt{VP->V}$\cdot$\texttt{NP PP [4]}} & \textcolor{red}{\texttt{NP->Det}$\cdot$\texttt{N PP [5]}} & \textcolor{red}{\texttt{NP->Det N}$\cdot$\texttt{PP [5]}} \\
+\textcolor{purple}{\texttt{S->NP}$\cdot$\texttt{VP [0]}} & \textcolor{blue}{\texttt{NP->}$\cdot$\texttt{Det N [5]}} & & \texttt{VP->V NP}$\cdot$\texttt{ [4]} \\
+\textcolor{red}{\texttt{VP->}$\cdot$\texttt{V NP [4]}} & \textcolor{red}{\texttt{NP->}$\cdot$\texttt{Det N PP [5]}} & & \textcolor{blue}{\texttt{VP->V NP}$\cdot$\texttt{PP [4]}} \\
+\textcolor{blue}{\texttt{VP->}$\cdot$\texttt{V NP PP [4]}} & & & \textcolor{purple}{\texttt{PP->}$\cdot$\texttt{P NP [7]}} \\
+ & & & \texttt{S->NP VP}$\cdot$\texttt{ [0]} \\
+\hline
+\multicolumn{1}{c}{8} & \multicolumn{1}{c}{9} & \multicolumn{1}{c}{} & \\
+\hline
+\textcolor{purple}{\texttt{P->"with"}$\cdot$\texttt{ [7]}} & \textcolor{purple}{\texttt{NP->"Bob"}$\cdot$\texttt{ [8]}} & & \\
+\textcolor{purple}{\texttt{PP->P}$\cdot$\texttt{NP [7]}} & \textcolor{purple}{\texttt{PP->P NP}$\cdot$\texttt{ [7]}} & & \\
+\texttt{NP->}$\cdot$\texttt{Det N [8]} & \textcolor{red}{\texttt{NP->Det N PP}$\cdot$\texttt{ [5]}} & & \\
+\texttt{NP->}$\cdot$\texttt{Det N PP [8]} & \textcolor{blue}{\texttt{VP->V NP PP}$\cdot$\texttt{ [4]}} & & \\
+ & \textcolor{red}{\texttt{VP->V NP}$\cdot$\texttt{ [4]}} & & \\
+ & \texttt{VP->V NP}$\cdot$\texttt{PP [4]} & & \\
+ & \textcolor{purple}{\texttt{S->NP VP}$\cdot$\texttt{ [0]}} & & \\
+ & \texttt{PP->}$\cdot$\texttt{P NP [9]} & & \\
+ & \textcolor{purple}{$\gamma$\texttt{->S}$\cdot$\texttt{ [0]}} & & \\
+\hline
+\end{tabular}
+\end{table}
+
+%\item Recovering the parse(s) from the chart, with this representation of edges, is somewhat horrible. However, we can make our life easier by noting that the dot only ever moves by a single (non-terminal) position, which means that we can look through the chart positions in order.
+%\item Starting from the end, with the dummy rule $\gamma$\texttt{->S}, we find the edges in each parse based on the following principle:
+%\begin{itemize}
+%\item If the dot follows a non-terminal \texttt{A->B}$\cdot$\texttt{C}, then we Completed an edge, so we look for an edge \texttt{B->D}$\cdot$ at this chart position, and add it to the parse (there may be more than one, which would entail multiple parses)
+%\item If the dot follows the arrow \texttt{A->}$\cdot$\texttt{B}, then we Predicted this edge, so we look for an edge \texttt{C->D}$\cdot$\texttt{A} at this chart position (and this bit is important) where \texttt{C->D A}$\cdot$ \textbf{has already been added to our parse}\footnote{If we're careful, it can be more efficient to read the edges in our parse first, to know what we're looking for.}, and add it to our parse.
+%\item If the dot follows a non-terminal, add it to the parse, then go to the preceding chart position.
+%\end{itemize}
+%\item Here, we read off the edges (for one of the parses) as follows:
+%\begin{enumerate}
+%\item \texttt{S->NP VP}$\cdot$\texttt{ [0]}, so we're looking for a Completed \texttt{VP}, of which there are two, let's choose the one without the \texttt{PP}:
+%\item \texttt{VP->V NP}$\cdot$\texttt{ [4]}, so we're looking for a Completed \texttt{NP}, of which there is only one: (no, there are two)
+%\item \texttt{NP->Det N PP}$\cdot$\texttt{ [5]}, so we're looking for a Completed \texttt{PP}:
+%\item \texttt{PP->P NP}$\cdot$\texttt{ [7]}, so we're looking for a Completed \texttt{NP}: ...
+%\end{enumerate}
+
+%\item Based on the completed chart (see Table 7), we can observe the two parses for this (structurally ambiguous) sentence: both have the same subject (the purple \texttt{NP} at [0,4]), but different predicates depending on whether the prepositional phrase at [7,9] attaches to make a noun phrase at [5,9] (in red, on the left below), or directly attaches to the verb phrase at [4,9] (in blue, on the right below).
+%\item A structural representation of these two trees follows on the next page.
+
+\begin{table}[hb!]
+\begin{tabular}{lllll|llll}
+\texttt{(S} & \texttt{(NP} & \texttt{(Det an)} & & & \texttt{(S} & \texttt{(NP} & \texttt{(Det an)} & \\
+ & & \texttt{(N park)} & & & & & \texttt{(N park)} & \\
+ & & \texttt{(PP} & \texttt{(P by)} & & & & \texttt{(PP} & \texttt{(P by)} \\
+ & & & \texttt{(NP Bob)} & & & & & \texttt{(NP Bob)} \\
+ & & \texttt{)} & & & & & \texttt{)} & \\
+ & \texttt{)} & & & & & \texttt{)} & & \\
+ & \texttt{(VP} & \texttt{(V walked)} & & & & \texttt{(VP} & \texttt{(V walked)} &\\
+ & & \texttt{(NP} & \texttt{(Det an)} & & & & \texttt{(NP} & \texttt{(Det an)} \\
+ & & & \texttt{(N park)} & & & & & \texttt{(N park)} \\
+ & & & \texttt{(PP} & \texttt{(P with)} & & & \texttt{)} & \\
+ & & & & \texttt{(NP Bob)} & & & \texttt{(PP} & \texttt{(P with)} \\
+ & & & \texttt{)} & & & & & \texttt{(NP Bob)} \\
+ & & \texttt{)} & & & & & \texttt{)} & \\ 
+ & \texttt{)} & & & & & \texttt{)} & & \\
+\texttt{)} & & & & & \texttt{)} & & & 
+\end{tabular}
+\caption{The two trees for the table above; left corresponds to the red colour; right to blue}
+\end{table}
+
+
+\end{enumerate}
+\end{document}
