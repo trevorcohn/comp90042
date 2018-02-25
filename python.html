@@ -50,7 +50,7 @@ Canopy is a much easier solution, unless you're up for a challenge.
 {% capture threshold %}{{'now' | date: "%s" | plus : 604800}}{% endcapture %}
 {% for lect in site.lectures %}
 <tr>
-  {% if lect.notebook %}
+  {% if lect.show == 1 and lect.notebook %}
   {% capture lecttime %}{{lect.date | date: '%s'}}{% endcapture %}
   <td>{{ lect.date  | date: "%a %-d/%-m" }}</td>
   <td><i>{{ lect.title }}</i>
@@ -59,7 +59,6 @@ Canopy is a much easier solution, unless you're up for a challenge.
     {% endfor %}
   </td>
   <td>
-    {% if lecttime <= threshold and lect.notebook %}
         {% assign first = 1 %}
         {% for matter in lect.notebook %}
             {% if first == 1 %}
@@ -70,7 +69,6 @@ Canopy is a much easier solution, unless you're up for a challenge.
             <a href="notebooks/{{ matter }}">{{ matter }}</a>
         {% endfor %}
         <br>
-    {% endif %}
   </td>
   {% endif %}
 </tr>

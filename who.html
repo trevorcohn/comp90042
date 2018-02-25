@@ -20,10 +20,12 @@ Coloured by person
 </tr>
 {% for lect in site.lectures %}
 <tr>
-{% if lect.who contains 'julian' %}
+{% if lect.who contains 'daniel' %}
     {% assign colour = "#FF0000" %}
 {% elsif lect.who contains 'trevor' %}
     {% assign colour = "#00AA00" %}
+{% elsif lect.who contains 'tutors' %}
+    {% assign colour = "#500050" %}
 {% else %}
     {% assign colour = "#0000FF" %}
 {% endif %}
