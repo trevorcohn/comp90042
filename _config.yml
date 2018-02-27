@@ -25,7 +25,7 @@ lectures:
       - <a href="https://web.stanford.edu/~jurafsky/slp3/7.pdf">JM3 Ch. 7</a>
     notebook: WSTA_N2_text_classification.ipynb
     who: daniel
-    show: 0
+    show: 1
 # week 2
    -
     date: 2018-3-5
