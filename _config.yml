@@ -15,7 +15,7 @@ lectures:
       - Python-intro.ipynb
       - words
     who: trevor and daniel
-    show: 0
+    show: 1
    -
     date: 2018-2-28
     title: Text classification
