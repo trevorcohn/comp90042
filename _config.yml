@@ -34,7 +34,7 @@ lectures:
     worksheet: 
         - workshop-02.pdf
     who: tutors
-    show: 0
+    show: 1
    -
     date: 2018-3-6
     title: Lexical semantics
