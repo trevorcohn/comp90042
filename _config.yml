@@ -41,7 +41,7 @@ lectures:
     slides: WSTA_L3_lexical_semantics.pdf
     reading:
       - <a href="https://web.stanford.edu/~jurafsky/slp3/17.pdf">JM3 Ch. 17</a>
-    notebook:
+    notebook: WSTA_N3_lexical_semantics.ipynb
     who: daniel
     show: 1
    -
@@ -52,17 +52,18 @@ lectures:
       - <a href="https://web.stanford.edu/~jurafsky/slp3/15.pdf">JM3 Ch. 15</a>
       - <a href="https://web.stanford.edu/~jurafsky/slp3/16.pdf"> JM3 Ch. 16.1 - 16.2 </a>
       - '(Optional) <a href="https://www.jair.org/media/2934/live-2934-4846-jair.pdf">From Frequency to Meaning: Vector Space Models of Semantics</a>'
-    notebook: 
+    notebook: WSTA_N4_distributional_semantics.ipynb 
     who: daniel
     show: 1
 # week 3
    -
     date: 2018-3-12
-    title: "Workshop"
+    title: "Workshop on word semantics"
     type: workshop
-    worksheet: 
+    worksheet:
+        - workshop-03.pdf
     who: tutors
-    show: 0
+    show: 1
    -
     date: 2018-3-13
     title: Part of Speech Tagging 
