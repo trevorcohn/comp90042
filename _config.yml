@@ -76,12 +76,13 @@ lectures:
    -
     date: 2018-3-14
     title: Probabilisitic Sequence Modelling
-    slides: 
+    slides: WSTA_L6_probabilistic_sequence_models.pdf
     notebook:
     reading:
-        - JM2 Ch. 6
+        - <a href="https://web.stanford.edu/~jurafsky/slp3/9.pdf">JM3 Ch. 9.1, 9.2, 9.4</a>
+        - <a href="https://web.stanford.edu/~jurafsky/slp3/10.pdf">JM3 Ch. 10.4</a>
     who: daniel
-    show: 0 
+    show: 1 
 # week 4
    -
     date: 2018-3-19
