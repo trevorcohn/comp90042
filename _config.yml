@@ -67,20 +67,22 @@ lectures:
    -
     date: 2018-3-13
     title: Part of Speech Tagging 
-    reading: JM2 Ch. 5.1-5.4,5.6-5.8
-    slides: 
+    reading: 
+     - <a href="https://web.stanford.edu/~jurafsky/slp3/10.pdf">JM3 Ch. 10.1-10.3, 10.7</a>
+    slides: WSTA_L5_part_of_speech_tagging.pdf
     notebook:
     who: daniel
-    show: 0
+    show: 1
    -
     date: 2018-3-14
     title: Probabilisitic Sequence Modelling
-    slides: 
+    slides: WSTA_L6_probabilistic_sequence_models.pdf
     notebook:
     reading:
-        - JM2 Ch. 6
+        - <a href="https://web.stanford.edu/~jurafsky/slp3/9.pdf">JM3 Ch. 9.1, 9.2, 9.4</a>
+        - <a href="https://web.stanford.edu/~jurafsky/slp3/10.pdf">JM3 Ch. 10.4</a>
     who: daniel
-    show: 0 
+    show: 1 
 # week 4
    -
     date: 2018-3-19
