@@ -70,14 +70,14 @@ lectures:
     reading: 
      - <a href="https://web.stanford.edu/~jurafsky/slp3/10.pdf">JM3 Ch. 10.1-10.3, 10.7</a>
     slides: WSTA_L5_part_of_speech_tagging.pdf
-    notebook:
+    notebook: WSTA_N5_part_of_speech_tagging.ipynb
     who: daniel
     show: 1
    -
     date: 2018-3-14
     title: Probabilisitic Sequence Modelling
     slides: WSTA_L6_probabilistic_sequence_models.pdf
-    notebook:
+    notebook: WSTA_N6_hidden_markov_models.ipynb
     reading:
         - <a href="https://web.stanford.edu/~jurafsky/slp3/9.pdf">JM3 Ch. 9.1, 9.2, 9.4</a>
         - <a href="https://web.stanford.edu/~jurafsky/slp3/10.pdf">JM3 Ch. 10.4</a>
@@ -86,11 +86,12 @@ lectures:
 # week 4
    -
     date: 2018-3-19
-    title: Workshop 
+    title: "Workshop on POS tagging and HMMs"
     type: workshop
-    worksheet: 
+    worksheet:
+        - workshop-04.pdf
     who: tutors
-    show: 0
+    show: 1
    -
     date: 2018-3-20
     title: Probabilisitic Sequence Modelling (cont.)
