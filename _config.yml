@@ -94,14 +94,15 @@ lectures:
     show: 1
    -
     date: 2018-3-20
-    title: Probabilisitic Sequence Modelling (cont.)
-    slides: 
+    title: Unsupervised Hidden Markov Models
+    slides: WSTA_L7_unsupervised_hmms.pdf
     notebook: 
-    reading: 
-        - <a href="http://cognet.mit.edu.ezp.lib.unimelb.edu.au/book/foundations-of-statistical-natural-language-processing">MS chapters 9 (9.1-9.2, 9.3.2) &amp; 10 (10.1-10.2)</a>
-        - Advanced (just for fun) <a href="http://www.ece.ucsb.edu/Faculty/Rabiner/ece259/Reprints/tutorial%20on%20hmm%20and%20applications.pdf">Rabiner's HMM tutorial</a>
+    reading:
+        - <a href="https://web.stanford.edu/~jurafsky/slp3/9.pdf">JM3 Ch. 9.3, 9.5</a>
+        - (Optional) <a href="http://cognet.mit.edu.ezp.lib.unimelb.edu.au/book/foundations-of-statistical-natural-language-processing">MS chapters 9 (9.1-9.2, 9.3.2) &amp; 10 (10.1-10.2)</a>
+        - (Optional) <a href="http://www.ece.ucsb.edu/Faculty/Rabiner/ece259/Reprints/tutorial%20on%20hmm%20and%20applications.pdf">Rabiner's HMM tutorial</a>
     who: daniel
-    show: 0
+    show: 1
    -
     date: 2018-3-21
     title: Context-Free Grammars
