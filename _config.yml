@@ -106,13 +106,14 @@ lectures:
    -
     date: 2018-3-21
     title: Context-Free Grammars
-    slides: 
+    slides: WSTA_L8_context-free_grammars.pdf 
     notebook: 
     reading: 
       - <a href="https://web.stanford.edu/~jurafsky/slp3/11.pdf">JM3 Ch. 11.1-11.5</a>
       - <a href="https://web.stanford.edu/~jurafsky/slp3/12.pdf">JM3 Ch. 12</a>
+      - <a href="http://people.umass.edu/nconstan/201/Constituency%20Tests.pdf">syntactic constituency tests</a>
     who: trevor
-    show: 0
+    show: 1
 # week 5
    -
     date: 2018-3-26
