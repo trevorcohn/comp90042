@@ -107,7 +107,7 @@ lectures:
     date: 2018-3-21
     title: Context-Free Grammars
     slides: WSTA_L8_context-free_grammars.pdf 
-    notebook: 
+    notebook: WSTA_N8_context-free_grammars.ipynb
     reading: 
       - <a href="https://web.stanford.edu/~jurafsky/slp3/11.pdf">JM3 Ch. 11.1-11.5</a>
       - <a href="https://web.stanford.edu/~jurafsky/slp3/12.pdf">JM3 Ch. 12</a>
@@ -120,12 +120,9 @@ lectures:
     title: Workshop (schedule altered for Good Friday holiday)
     type: workshop
     worksheet: 
-        - workshop-04.pdf
-        - solutions-04.pdf
-        -  cyk-04.pdf
-        - earley-04.pdf
+        - workshop-05.pdf
     who: tutors
-    show: 0
+    show: 1
    -
     date: 2018-3-27
     title: Probablisitic Parsing
