@@ -96,7 +96,7 @@ lectures:
     date: 2018-3-20
     title: Unsupervised Hidden Markov Models
     slides: WSTA_L7_unsupervised_hmms.pdf
-    notebook: 
+    notebook: WSTA_N7_unsupervised_hmms.ipynb
     reading:
         - <a href="https://web.stanford.edu/~jurafsky/slp3/9.pdf">JM3 Ch. 9.3, 9.5</a>
         - (Optional) <a href="https://ebookcentral.proquest.com/lib/unimelb/reader.action?docID=3339544&ppg=354">MS chapters 9  &amp; 10 </a>
