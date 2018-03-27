@@ -126,18 +126,18 @@ lectures:
    -
     date: 2018-3-27
     title: Probablisitic Parsing
-    slides: 
+    slides: WSTA_L9_probabilistic_grammars.pdf
     notebook: 
-    reading: <a href="https://web.stanford.edu/~jurafsky/slp3/13.pdf">JM3 Ch. 13</a>
+    reading: <a href="https://web.stanford.edu/~jurafsky/slp3/13.pdf">JM3 Ch. 13-13.6</a>
     who: trevor
-    show: 0
+    show: 1
    -
     date: 2018-3-28
     title: Dependency parsing
-    slides: 
+    slides: WSTA_L10_dependency.pdf
     reading: <a href="https://web.stanford.edu/~jurafsky/slp3/14.pdf">JM3 Ch. 14</a>
     who: trevor
-    show: 0
+    show: 1
 # week off
    -
     date: 2018-4-2
