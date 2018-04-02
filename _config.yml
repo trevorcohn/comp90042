@@ -33,6 +33,7 @@ lectures:
     type: workshop
     worksheet: 
         - workshop-02.pdf
+	- solutions-02.pdf
     who: tutors
     show: 1
    -
@@ -62,6 +63,7 @@ lectures:
     type: workshop
     worksheet:
         - workshop-03.pdf
+	- solutions-04.pdf
     who: tutors
     show: 1
    -
@@ -90,6 +92,7 @@ lectures:
     type: workshop
     worksheet:
         - workshop-04.pdf
+	- solutions-04.pdf
     who: tutors
     show: 1
    -
