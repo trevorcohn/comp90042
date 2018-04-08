@@ -150,8 +150,10 @@ lectures:
     date: 2018-4-9
     title: Workshop 
     type: workshop
+    worksheet: 
+	- workshop-06.pdf
     who: tutors
-    show: 0
+    show: 1
    -
     date: 2018-4-10
     title: Ngram language modelling
