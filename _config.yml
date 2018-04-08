@@ -130,7 +130,7 @@ lectures:
     date: 2018-3-27
     title: Probablisitic Parsing
     slides: WSTA_L9_probabilistic_grammars.pdf
-    notebook: 
+    notebook: WSTA_N9_probabilistic_parsing.ipynb
     reading: <a href="https://web.stanford.edu/~jurafsky/slp3/13.pdf">JM3 Ch. 13-13.6</a>
     who: trevor
     show: 1
