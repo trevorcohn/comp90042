@@ -150,7 +150,8 @@ lectures:
     date: 2018-4-9
     title: Workshop 
     type: workshop
-    worksheet: workshop-06.pdf
+    worksheet: 
+       - workshop-06.pdf
     who: tutors
     show: 1
    -
