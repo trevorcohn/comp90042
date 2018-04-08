@@ -151,7 +151,7 @@ lectures:
     title: Workshop 
     type: workshop
     worksheet: 
-	- workshop-06.pdf
+       - workshop-06.pdf
     who: tutors
     show: 1
    -
