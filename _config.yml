@@ -157,13 +157,14 @@ lectures:
    -
     date: 2018-4-10
     title: Ngram language modelling
+    slides: WSTA_L11_n-gram_language_models.pdf
     reading: <a href="https://web.stanford.edu/~jurafsky/slp3/4.pdf"> JM3 Ch. 4 </a>
-    who: trevor
-    show: 0
+    who: daniel
+    show: 1
    -
     date: 2018-4-10
     title: Deep learning for language models and tagging
-    who: daniel
+    who: trevor
     show: 0
 # week 7
    -
