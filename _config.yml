@@ -165,7 +165,11 @@ lectures:
     date: 2018-4-10
     title: Deep learning for language models and tagging
     who: trevor
-    show: 0
+    slides: WSTA_L12_neural_language_models.pdf
+    reading: 
+        - <a href="https://web.stanford.edu/~jurafsky/slp3/8.pdf"> JM3 Ch. 8 </a>
+        - <a href="https://arxiv.org/abs/1703.01619"> Neubig 2017, sections 5-6 </a>
+    show: 1
 # week 7
    -
     date: 2018-4-16
