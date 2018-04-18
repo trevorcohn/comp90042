@@ -191,12 +191,11 @@ lectures:
    -
     date: 2018-4-18
     title: Question Answering 
-    slides: 
+    slides:  WSTA_L14_question_answering.pdf
     reading: 
       - <a href="https://web.stanford.edu/~jurafsky/slp3/28.pdf"> JM3 Ch. 28 </a>
-      - (Optional) <a href="https://www.youtube.com/watch?v=kTXJCEvCDYk"> Video showing QA system beating Jeopardy Grandmaster</a>
     who: tim
-    show: 0
+    show: 1
 # week 8
    -
     date: 2018-4-23
