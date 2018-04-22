@@ -201,9 +201,10 @@ lectures:
     date: 2018-4-23
     title: Workshop
     type: workshop
-    worksheet: 
+    worksheet:
+        - workshop-08.pdf
     who: tutors
-    show: 0
+    show: 1
    -
     date: 2018-4-24
     title: Topic Models
