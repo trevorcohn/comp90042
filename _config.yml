@@ -209,6 +209,7 @@ lectures:
     date: 2018-4-24
     title: Topic Models
     slides: WSTA_L15_topic_models.pdf
+    notebook: WSTA_N15_topic_models.ipynb
     reading:
       - <a href="http://www.cs.columbia.edu/~blei/papers/Blei2012.pdf"> David Blei's ACM paper </a>
       - (optional) <a href="https://mimno.infosci.cornell.edu/papers/2017_fntir_tm_applications.pdf"> Applications of topic models </a>
