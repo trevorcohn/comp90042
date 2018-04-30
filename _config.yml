@@ -223,9 +223,10 @@ lectures:
     date: 2018-4-30
     title: "Workshop"
     type: workshop
-    worksheet: 
+    worksheet:
+        - workshop-09.pdf
     who: tutors
-    show: 0
+    show: 1
    -
     date: 2018-5-1
     title: Information Retrieval -- boolean search and the vector space model 
