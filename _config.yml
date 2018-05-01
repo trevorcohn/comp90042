@@ -208,10 +208,13 @@ lectures:
    -
     date: 2018-4-24
     title: Topic Models
-    slides: 
-    reading: 
+    slides: WSTA_L15_topic_models.pdf
+    notebook: WSTA_N15_topic_models.ipynb
+    reading:
+      - <a href="http://www.cs.columbia.edu/~blei/papers/Blei2012.pdf"> David Blei's ACM paper </a>
+      - (optional) <a href="https://mimno.infosci.cornell.edu/papers/2017_fntir_tm_applications.pdf"> Applications of topic models </a>
     who: daniel
-    show: 0
+    show: 1
    -
     date: 2018-4-25
     title: "ANZAC day holiday"
@@ -220,9 +223,10 @@ lectures:
     date: 2018-4-30
     title: "Workshop"
     type: workshop
-    worksheet: 
+    worksheet:
+        - workshop-09.pdf
     who: tutors
-    show: 0
+    show: 1
    -
     date: 2018-5-1
     title: Information Retrieval -- indexing and querying in the vector space model
