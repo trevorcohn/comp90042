@@ -239,12 +239,10 @@ lectures:
     show: 1
    -
     date: 2018-5-2
-    title: Indexing and querying in the vector space model, evaluation
+    title: Efficient indexing
     slides: 
     reading:
-        - <a href="http://nlp.stanford.edu/IR-book/pdf/07system.pdf">IIR Chapter 7 (7.1)</a>
-        - <a href="http://nlp.stanford.edu/IR-book/pdf/08eval.pdf">IIR Chapter 8</a>
-    who: trevor
+    who: matthias
     show: 0
 # week 10
    -
@@ -256,16 +254,15 @@ lectures:
     show: 0
    -
     date: 2018-5-8
-    title: "Index and vocabulary compression"
+    title: Efficient indexing
     slides: 
     reading:
         - <a href="http://nlp.stanford.edu/IR-book/pdf/05comp.pdf">IIR Chapter 5 </a>
-        - see also papers referenced in slides
     who: matthias  
     show: 0
    -
     date: 2018-5-9
-    title: "Efficient query processing"
+    title: Query completion and query expansion
     slides:
     reading:
         - <a href="http://nlp.stanford.edu/IR-book/pdf/05comp.pdf">IIR Chapter 5 </a>
@@ -282,7 +279,7 @@ lectures:
     show: 0
    -
     date: 2018-5-15
-    title: "The Web as a Graph -- Page-rank and HITS"
+    title: IR evaluation and learning to rank
     slides: 
     reading:
         - <a href="http://nlp.stanford.edu/IR-book/pdf/21link.pdf">IIR Chapter 21</a>
