@@ -239,11 +239,12 @@ lectures:
     show: 1
    -
     date: 2018-5-2
-    title: Efficient indexing
-    slides: 
+    title: Index compression and efficient query processing
+    slides: WSTA_L17_IR.pdf
     reading:
+        - <a href="https://nlp.stanford.edu/IR-book/pdf/05comp.pdf">IIR Chapter 5</a>
     who: matthias
-    show: 0
+    show: 1
 # week 10
    -
     date: 2018-5-7
