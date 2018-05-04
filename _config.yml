@@ -124,6 +124,7 @@ lectures:
     type: workshop
     worksheet: 
         - workshop-05.pdf
+        - solutions-05.pdf
     who: tutors
     show: 1
    -
@@ -152,6 +153,7 @@ lectures:
     type: workshop
     worksheet: 
        - workshop-06.pdf
+       - solutions-06.pdf
     who: tutors
     show: 1
    -
@@ -178,6 +180,7 @@ lectures:
     type: workshop
     worksheet: 
        - workshop-07.pdf
+       - solutions-07.pdf
     who: tutors
     show: 1
    -
@@ -203,6 +206,7 @@ lectures:
     type: workshop
     worksheet:
         - workshop-08.pdf
+        - solutions-08.pdf
     who: tutors
     show: 1
    -
@@ -225,6 +229,7 @@ lectures:
     type: workshop
     worksheet:
         - workshop-09.pdf
+        - solutions-09.pdf
     who: tutors
     show: 1
    -
