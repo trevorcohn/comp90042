@@ -236,7 +236,7 @@ lectures:
     date: 2018-5-1
     title: Information Retrieval -- indexing and querying in the vector space model
     slides: WSTA_L16_ir_vsm.pdf
-    notebook: 
+    notebook: WSTA_N16_information_retrieval.ipynb
     reading:
         - <a href="http://nlp.stanford.edu/IR-book/pdf/06vect.pdf">IIR Chapter 6</a>
         - <a href="http://nlp.stanford.edu/IR-book/pdf/11prob.pdf">IIR Chapter 11.4.3</a>
@@ -255,9 +255,10 @@ lectures:
     date: 2018-5-7
     title: Workshop 
     type: workshop
-    worksheet: 
+    worksheet:
+        - workshop-09.pdf
     who: tutors
-    show: 0
+    show: 1
    -
     date: 2018-5-8
     title: Efficient indexing
