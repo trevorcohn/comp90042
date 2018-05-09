@@ -272,7 +272,7 @@ lectures:
     title: Index construction and advanced queries
     slides: WSTA_L19_IR.pdf
     reading:
-        - <a href="http://nlp.stanford.edu/IR-book/pdf/05comp.pdf">IIR Chapter 4 </a>
+        - <a href="http://nlp.stanford.edu/IR-book/pdf/04const.pdf">IIR Chapter 4 </a>
         - (Optional) see also papers referenced in slides
     who: matthias  
     show: 1
