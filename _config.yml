@@ -281,9 +281,10 @@ lectures:
     date: 2018-5-14
     title: Workshop 
     type: workshop
-    worksheet: 
+    worksheet:
+        - workshop-11.pdf
     who: tutors
-    show: 0
+    show: 1
    -
     date: 2018-5-15
     title: IR evaluation and learning to rank
