@@ -298,7 +298,7 @@ lectures:
     date: 2018-5-16
     title: Machine Translation, word based models 
     slides: WSTA_L21_machine_translation_word.pdf
-    notebook:
+    notebook: WSTA_N21_machine_translation.ipynb
     who: trevor
     show: 1
     reading:
