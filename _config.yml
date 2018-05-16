@@ -297,13 +297,13 @@ lectures:
    -
     date: 2018-5-16
     title: Machine Translation, word based models 
-    slides: 
+    slides: WSTA_L21_machine_translation_word.pdf
     notebook:
     who: trevor
-    show: 0
+    show: 1
     reading:
         - JM2 Chapter 25, 25.4-25.6
-        - '<a href="https://www-cambridge-org.ezp.lib.unimelb.edu.au/core/services/aop-cambridge-core/content/view/6F03C4290D7E98278BB2F6A8CA8F6D1F/9780511815829c4_p81-126_CBO.pdf/wordbased_models.pdf">Koehn09 Chapter 4</a>, 4.1-4.3'
+        - 'Optional: <a href="https://www-cambridge-org.ezp.lib.unimelb.edu.au/core/services/aop-cambridge-core/content/view/6F03C4290D7E98278BB2F6A8CA8F6D1F/9780511815829c4_p81-126_CBO.pdf/wordbased_models.pdf">Koehn09 Chapter 4</a>, 4.1-4.3'
 # week 12
    -
     date: 2018-5-21
@@ -317,14 +317,14 @@ lectures:
    -
     date: 2018-5-22
     title: Machine translation, phrase based translation and neural encoder-decoder
-    slides: 
+    slides: WSTA_L22_machine_translation_phrase.pdf
     who: trevor
     show: 0
     reading:
         - 'JM2 Chapter 25: 25.7-25.9'
-        - '<a href="https://www-cambridge-org.ezp.lib.unimelb.edu.au/core/services/aop-cambridge-core/content/view/0B9EC28212FB7D15563B8F9B85A2870B/9780511815829c5_p127-154_CBO.pdf/phrasebased_models.pdf">Koehn09 Chapter 5</a>, 5.1-5.2'
-        - '<a href="https://www-cambridge-org.ezp.lib.unimelb.edu.au/core/services/aop-cambridge-core/content/view/50D47709AF26FAB89975797E5E5B6C12/9780511815829c6_p155-180_CBO.pdf/decoding.pdf">Koehn09 Chapter 6</a>, 6.1-6.2'
-        - '(opt.) <a href="https://arxiv.org/abs/1703.01619">Neural Machine Translation and Sequence-to-sequence Models: A Tutorial, Neubig 2017</a>'
+        - 'Optional: <a href="https://www-cambridge-org.ezp.lib.unimelb.edu.au/core/services/aop-cambridge-core/content/view/0B9EC28212FB7D15563B8F9B85A2870B/9780511815829c5_p127-154_CBO.pdf/phrasebased_models.pdf">Koehn09 Chapter 5</a>, 5.1-5.2'
+        - 'Optional: <a href="https://www-cambridge-org.ezp.lib.unimelb.edu.au/core/services/aop-cambridge-core/content/view/50D47709AF26FAB89975797E5E5B6C12/9780511815829c6_p155-180_CBO.pdf/decoding.pdf">Koehn09 Chapter 6</a>, 6.1-6.2'
+        - '<a href="https://arxiv.org/abs/1703.01619">Neural Machine Translation and Sequence-to-sequence Models: A Tutorial, Neubig 2017; Sections 7 and 8</a>'
    -
     date: 2018-5-23
     title: Subject review
