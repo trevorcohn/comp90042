@@ -288,12 +288,12 @@ lectures:
    -
     date: 2018-5-15
     title: IR evaluation and learning to rank
-    slides: 
+    slides: WSTA_L20_IR_EVAL_L2R.pdf
     reading:
-        - <a href="http://nlp.stanford.edu/IR-book/pdf/21link.pdf">IIR Chapter 21</a>
-        - <a href="http://nlp.stanford.edu/IR-book/pdf/18lsi.pdf">IIR Chapter 18 (Eigen decomposition review)</a>
-    who: trevor  
-    show: 0
+        - <a href="http://nlp.stanford.edu/IR-book/pdf/08eval.pdf">IIR Chapter 8</a>
+        - <a href="https://link-springer-com.ezp.lib.unimelb.edu.au/content/pdf/10.1007%2F978-3-642-14267-3.pdf">Learning to Rank for Information Retrieval, Chapter 1.3</a>
+    who: matthias
+    show: 1
    -
     date: 2018-5-16
     title: Machine Translation, word based models 
