@@ -257,6 +257,7 @@ lectures:
     type: workshop
     worksheet:
         - workshop-10.pdf
+        - solutions-10.pdf
     who: tutors
     show: 1
    -
@@ -283,6 +284,7 @@ lectures:
     type: workshop
     worksheet:
         - workshop-11.pdf
+        - solutions-11.pdf
     who: tutors
     show: 1
    -
@@ -311,9 +313,8 @@ lectures:
     type: workshop
     worksheet: 
         - workshop-12.pdf
-        - solutions-12.pdf
     who: tutors
-    show: 0
+    show: 1
    -
     date: 2018-5-22
     title: Machine translation, phrase based translation and neural encoder-decoder
