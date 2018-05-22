@@ -320,7 +320,7 @@ lectures:
     title: Machine translation, phrase based translation and neural encoder-decoder
     slides: WSTA_L22_machine_translation_phrase.pdf
     who: trevor
-    show: 0
+    show: 1
     reading:
         - 'JM2 Chapter 25: 25.7-25.9'
         - 'Optional: <a href="https://www-cambridge-org.ezp.lib.unimelb.edu.au/core/services/aop-cambridge-core/content/view/0B9EC28212FB7D15563B8F9B85A2870B/9780511815829c5_p127-154_CBO.pdf/phrasebased_models.pdf">Koehn09 Chapter 5</a>, 5.1-5.2'
