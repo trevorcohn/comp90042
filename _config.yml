@@ -329,6 +329,11 @@ lectures:
    -
     date: 2018-5-23
     title: Subject review
-    slides: WSTA_L23_review.pdf
+    slides: 
+        - WSTA_L23_review.pdf
+    reading:
+        - <a href="https://course-work.unimelb.edu.au/handle/11343/190835">exams from previous years on the library website</a>
+        - <a href="revision/solutions_2017.pdf">exam solutions 2017</a>
+        - <a href="revision/solutions_2015.pdf">exam solutions 2015</a>
     who: trevor and daniel
     show: 1
