@@ -313,6 +313,7 @@ lectures:
     type: workshop
     worksheet: 
         - workshop-12.pdf
+        - solutions-12.pdf
     who: tutors
     show: 1
    -
