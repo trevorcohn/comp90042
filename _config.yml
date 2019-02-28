@@ -29,7 +29,9 @@ lectures:
     date: 2019-3-7
     title: "Workshop on python basics (optional)"
     type: workshop-on-day
-    reading: <a href="https://groklearning.com/learn/">Grok's interactive Intro to Python I and II</a> (login with uom username)
+    worksheet: 
+        - week1-python-01.pdf
+	- https://groklearning.com/learn/
     who: tutors
     week: 1
     show: 1
