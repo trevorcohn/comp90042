@@ -19,6 +19,7 @@ Below we've collated all the reading links for your convenience.
     <td>Reading</td>
 </tr>
 {% for lect in site.lectures %}
+{% if lect.type != 'workshop' and lect.type != 'workshop-on-day' %}
 <tr>
   <td>{{ lect.date  | date: "%a %-d/%-m" }}</td>
   <td><i>{{ lect.title }}</i>
@@ -43,6 +44,7 @@ Below we've collated all the reading links for your convenience.
     {% endif %}
   </td>
 </tr>
+{% endif %}
 {% endfor %}
 </tbody>
 </table>

@@ -31,7 +31,6 @@ lectures:
     type: workshop-on-day
     worksheet: 
         - week1-python-01.pdf
-	- https://groklearning.com/learn/
     who: tutors
     week: 1
     show: 1
