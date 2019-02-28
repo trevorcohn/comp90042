@@ -19,7 +19,7 @@ Workshops run from week 2 onwards. You can find the worksheets below
     <td>Materials</td>
 </tr>
 {% for lect in site.lectures %}
-{% if lect.type == "workshop" %}
+{% if lect.type == "workshop" or lect.type == "workshop-on-day" %}
 <tr>
   <td>
        {{ lect.date  | date: "%a %-d/%-m" }}

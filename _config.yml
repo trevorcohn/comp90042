@@ -1,340 +1,364 @@
-exclude: ['README.md', 'comp90042_2016', 'comp90042_2017', 'comp90042_2018']
+exclude: ['README.md', 'comp90042_2016', 'comp90042_2017', 'comp90042_2019']
 timezone: Australia/Eastern
 lectures:
 # week 1, no workshops
    -
-    date: 2018-2-27
+    date: 2019-3-5
     title: Introduction and Preprocessing
-    slides: 
-      - WSTA_L1a_introduction.pdf
-      - WSTA_L1b_preprocessing.pdf
+    slides: WSTA_L1_introduction.pdf
     reading:
       - <a href="https://web.stanford.edu/~jurafsky/slp3/2.pdf">JM3 Ch. 2</a>
     notebook: 
-      - WSTA_N1B_preprocessing.ipynb
-      - Python-intro.ipynb
+      - WSTA_N1_preprocessing.ipynb
       - words
-    who: trevor and daniel
-    show: 1
+    who: trevor 
+    week: 1
+    show: 0
    -
-    date: 2018-2-28
-    title: Text classification
-    slides: WSTA_L2_text_classification.pdf
+    date: 2019-3-6
+    title: Information Retrieval with the vector space model
+    slides: WSTA_L2_ir_vsm.pdf
+    notebook: WSTA_N2_information_retrieval.ipynb
     reading:
-      - <a href="https://web.stanford.edu/~jurafsky/slp3/6.pdf">JM3 Ch. 6</a>
-      - <a href="https://web.stanford.edu/~jurafsky/slp3/7.pdf">JM3 Ch. 7</a>
-    notebook: WSTA_N2_text_classification.ipynb
-    who: daniel
+        - <a href="http://nlp.stanford.edu/IR-book/pdf/06vect.pdf">IIR Chapter 6</a>
+        - <a href="http://nlp.stanford.edu/IR-book/pdf/11prob.pdf">IIR Chapter 11.4.3</a>
+    who: trevor
+    week: 1
+    show: 0
+   -
+    date: 2019-3-7
+    title: "Workshop on python basics (optional)"
+    type: workshop-on-day
+    reading: <a href="https://groklearning.com/learn/">Grok's interactive Intro to Python I and II</a>
+    who: tutors
+    week: 1
     show: 1
 # week 2
    -
-    date: 2018-3-5
-    title: "Workshop on preprocessing and text classification"
+    date: 2019-3-11
+    title: "Workshop on preprocessing and information retrieval"
     type: workshop
     worksheet: 
         - workshop-02.pdf
         - solutions-02.pdf
     who: tutors
-    show: 1
+    week: 2
+    show: 0
    -
-    date: 2018-3-6
-    title: Lexical semantics
-    slides: WSTA_L3_lexical_semantics.pdf
+    date: 2019-3-12
+    title: Index compression and efficient query processing
+    slides: WSTA_L3_IR.pdf
     reading:
-      - <a href="https://web.stanford.edu/~jurafsky/slp3/17.pdf">JM3 Ch. 17</a>
-    notebook: WSTA_N3_lexical_semantics.ipynb
-    who: daniel
-    show: 1
+        - <a href="https://nlp.stanford.edu/IR-book/pdf/05comp.pdf">IIR Chapter 5</a>
+    who: matthias
+    week: 2
+    show: 0
    -
-    date: 2018-3-7
-    title: Distributional semantics
-    slides: WSTA_L4_distributional_semantics.pdf
+    date: 2019-3-13
+    title: Query completion and query expansion
+    slides: WSTA_L4_IR.pdf
     reading:
-      - <a href="https://web.stanford.edu/~jurafsky/slp3/15.pdf">JM3 Ch. 15</a>
-      - <a href="https://web.stanford.edu/~jurafsky/slp3/16.pdf"> JM3 Ch. 16.1 - 16.2 </a>
-      - '(Optional) <a href="https://www.jair.org/media/2934/live-2934-4846-jair.pdf">From Frequency to Meaning: Vector Space Models of Semantics</a>'
-    notebook: WSTA_N4_distributional_semantics.ipynb 
-    who: daniel
-    show: 1
+        - <a href="http://nlp.stanford.edu/IR-book/pdf/09expand.pdf">IIR Chapter 9 </a>
+    who: matthias  
+    week: 2
+    show: 0
 # week 3
    -
-    date: 2018-3-12
-    title: "Workshop on word semantics"
+    date: 2019-3-18
+    title: "Workshop on index compression and efficient query processing"
     type: workshop
     worksheet:
         - workshop-03.pdf
         - solutions-03.pdf
     who: tutors
-    show: 1
+    week: 3
+    show: 0
    -
-    date: 2018-3-13
-    title: Part of Speech Tagging 
-    reading: 
-     - <a href="https://web.stanford.edu/~jurafsky/slp3/10.pdf">JM3 Ch. 10.1-10.3, 10.7</a>
-    slides: WSTA_L5_part_of_speech_tagging.pdf
-    notebook: WSTA_N5_part_of_speech_tagging.ipynb
-    who: daniel
-    show: 1
-   -
-    date: 2018-3-14
-    title: Probabilisitic Sequence Modelling
-    slides: WSTA_L6_probabilistic_sequence_models.pdf
-    notebook: WSTA_N6_hidden_markov_models.ipynb
+    date: 2019-3-19
+    title: Index construction and advanced queries
+    slides: WSTA_L5_IR.pdf
     reading:
-        - <a href="https://web.stanford.edu/~jurafsky/slp3/9.pdf">JM3 Ch. 9.1, 9.2, 9.4</a>
-        - <a href="https://web.stanford.edu/~jurafsky/slp3/10.pdf">JM3 Ch. 10.4</a>
-    who: daniel
-    show: 1 
+        - <a href="http://nlp.stanford.edu/IR-book/pdf/04const.pdf">IIR Chapter 4 </a>
+    who: matthias  
+    week: 3
+    show: 0
+   -
+    date: 2019-3-20
+    title: Text classification
+    slides: WSTA_L6_text_classification.pdf
+    reading:
+      - <a href="https://web.stanford.edu/~jurafsky/slp3/6.pdf">JM3 Ch. 6</a>
+      - <a href="https://web.stanford.edu/~jurafsky/slp3/7.pdf">JM3 Ch. 7</a>
+    notebook: WSTA_N6_text_classification.ipynb
+    who: trevor
+    week: 3
+    show: 0
 # week 4
    -
-    date: 2018-3-19
-    title: "Workshop on POS tagging and HMMs"
+    date: 2019-3-25
+    title: "Workshop on query expansion and text classification"
     type: workshop
     worksheet:
         - workshop-04.pdf
         - solutions-04.pdf
     who: tutors
-    show: 1
+    week: 4
+    show: 0
    -
-    date: 2018-3-20
-    title: Unsupervised Hidden Markov Models
-    slides: WSTA_L7_unsupervised_hmms.pdf
-    notebook: WSTA_N7_unsupervised_HMMs.ipynb
+    date: 2019-3-26
+    title: Text clustering
+    slides: WSTA_L7_text_clustering.pdf
     reading:
-        - <a href="https://web.stanford.edu/~jurafsky/slp3/9.pdf">JM3 Ch. 9.3, 9.5</a>
-        - (Optional) <a href="https://ebookcentral.proquest.com/lib/unimelb/reader.action?docID=3339544&ppg=354">MS chapters 9  &amp; 10 </a>
-        - (Optional) <a href="http://www.ece.ucsb.edu/Faculty/Rabiner/ece259/Reprints/tutorial%20on%20hmm%20and%20applications.pdf">Rabiner's HMM tutorial</a>
-    who: daniel
-    show: 1
-   -
-    date: 2018-3-21
-    title: Context-Free Grammars
-    slides: WSTA_L8_context-free_grammars.pdf 
-    notebook: WSTA_N8_context-free_grammars.ipynb
-    reading: 
-      - <a href="https://web.stanford.edu/~jurafsky/slp3/11.pdf">JM3 Ch. 11.1-11.5</a>
-      - <a href="https://web.stanford.edu/~jurafsky/slp3/12.pdf">JM3 Ch. 12</a>
-      - <a href="http://people.umass.edu/nconstan/201/Constituency%20Tests.pdf">syntactic constituency tests</a>
+      - <a href="https://web.stanford.edu/~jurafsky/slp3/6.pdf">JM3 Ch. 6</a>
+      - <a href="https://web.stanford.edu/~jurafsky/slp3/7.pdf">JM3 Ch. 7</a>
+    notebook: WSTA_N7_topic_models.ipynb
     who: trevor
-    show: 1
+    week: 4
+    show: 0
+   -
+    date: 2019-3-27
+    title: Ngram language modelling
+    slides: WSTA_L8_n-gram_language_models.pdf
+    notebook: WSTA_N8_n-gram_language_models.ipynb
+    reading: <a href="https://web.stanford.edu/~jurafsky/slp3/4.pdf"> JM3 Ch. 4 </a>
+    who: trevor
+    week: 4
+    show: 0
 # week 5
    -
-    date: 2018-3-26
-    title: Workshop (schedule altered for Good Friday holiday)
+    date: 2019-4-1
+    title: "Workshop on word semantics"
     type: workshop
-    worksheet: 
+    worksheet:
         - workshop-05.pdf
         - solutions-05.pdf
     who: tutors
-    show: 1
+    week: 5
+    show: 0
    -
-    date: 2018-3-27
-    title: Probablisitic Parsing
-    slides: WSTA_L9_probabilistic_grammars.pdf
-    notebook: WSTA_N9_probabilistic_parsing.ipynb
-    reading: <a href="https://web.stanford.edu/~jurafsky/slp3/13.pdf">JM3 Ch. 13-13.6</a>
+    date: 2019-4-2
+    title: Lexical semantics
+    slides: WSTA_L9_lexical_semantics.pdf
+    reading:
+      - <a href="https://web.stanford.edu/~jurafsky/slp3/17.pdf">JM3 Ch. 17</a>
+    notebook: WSTA_N9_lexical_semantics.ipynb
     who: trevor
-    show: 1
+    week: 5
+    show: 0
    -
-    date: 2018-3-28
-    title: Dependency parsing
-    slides: WSTA_L10_dependency.pdf
-    reading: <a href="https://web.stanford.edu/~jurafsky/slp3/14.pdf">JM3 Ch. 14</a>
+    date: 2019-4-3
+    title: Distributional semantics
+    slides: WSTA_L10_distributional_semantics.pdf
+    reading:
+      - <a href="https://web.stanford.edu/~jurafsky/slp3/15.pdf">JM3 Ch. 15</a>
+      - <a href="https://web.stanford.edu/~jurafsky/slp3/16.pdf"> JM3 Ch. 16.1 - 16.2 </a>
+    notebook: WSTA_N10_distributional_semantics.ipynb 
+    week: 5
     who: trevor
-    show: 1
-# week off
+    show: 0
+# week 6
    -
-    date: 2018-4-2
-    title: "Easter holiday break"
-# week 6 
-   -
-    date: 2018-4-9
-    title: Workshop 
+    date: 2019-4-8
+    title: "Workshop"
     type: workshop
-    worksheet: 
-       - workshop-06.pdf
-       - solutions-06.pdf
+    worksheet:
+        - workshop-06.pdf
+        - solutions-06.pdf
     who: tutors
-    show: 1
+    week: 6
+    show: 0
    -
-    date: 2018-4-10
-    title: Ngram language modelling
-    slides: WSTA_L11_n-gram_language_models.pdf
-    notebook: WSTA_N11_n-gram_language_models.ipynb
-    reading: <a href="https://web.stanford.edu/~jurafsky/slp3/4.pdf"> JM3 Ch. 4 </a>
-    who: daniel
-    show: 1
+    date: 2019-4-9
+    title: Part of Speech Tagging 
+    reading: 
+     - <a href="https://web.stanford.edu/~jurafsky/slp3/10.pdf">JM3 Ch. 10.1-10.3, 10.7</a>
+    slides: WSTA_L11_part_of_speech_tagging.pdf
+    notebook: WSTA_N11_part_of_speech_tagging.ipynb
+    who: trevor
+    week: 6
+    show: 0
    -
-    date: 2018-4-10
+    date: 2019-4-10
     title: Deep learning for language models and tagging
     who: trevor
-    slides: WSTA_L12_neural_language_models.pdf
+    slides: WSTA_L12_neural_sequence_models.pdf
     reading: 
         - <a href="https://web.stanford.edu/~jurafsky/slp3/8.pdf"> JM3 Ch. 8 </a>
         - <a href="https://arxiv.org/abs/1703.01619"> Neubig 2017, sections 5-6 </a>
-    show: 1
+    week: 6
+    show: 0
 # week 7
    -
-    date: 2018-4-16
-    title: Workshop 
+    date: 2019-4-15
+    title: "Workshop (schedule altered for Good Friday holiday)"
     type: workshop
-    worksheet: 
-       - workshop-07.pdf
-       - solutions-07.pdf
+    worksheet:
+        - workshop-07.pdf
+        - solutions-07.pdf
     who: tutors
-    show: 1
+    week: 7
+    show: 0
    -
-    date: 2018-4-17
+    date: 2019-4-16
     title: Information Extraction
     slides: 
-    reading: <a href="https://web.stanford.edu/~jurafsky/slp3/21.pdf"> JM3 Ch. 21 </a>
-    who: daniel
+    reading: <a href="https://web.stanford.edu/~jurafsky/slp4/21.pdf"> JM3 Ch. 21 </a>
+    who: trevor
     slides: WSTA_L13_information_extraction.pdf
-    show: 1
+    week: 7
+    show: 0
    -
-    date: 2018-4-18
+    date: 2019-4-17
     title: Question Answering 
     slides:  WSTA_L14_question_answering.pdf
     reading: 
       - <a href="https://web.stanford.edu/~jurafsky/slp3/28.pdf"> JM3 Ch. 28 </a>
-    who: tim
-    show: 1
+    who: trevor
+    week: 7
+    show: 0
+# week off
+   -
+    date: 2019-4-22
+    title: "Easter holiday break"
+    week: 7
 # week 8
    -
-    date: 2018-4-23
-    title: Workshop
+    date: 2019-4-29
+    title: "Workshop"
     type: workshop
     worksheet:
         - workshop-08.pdf
         - solutions-08.pdf
     who: tutors
-    show: 1
+    week: 8
+    show: 0
    -
-    date: 2018-4-24
-    title: Topic Models
-    slides: WSTA_L15_topic_models.pdf
-    notebook: WSTA_N15_topic_models.ipynb
+    date: 2019-4-30
+    title: Language theory and automata
+   -
+    date: 2019-5-1
+    title: Probabilisitic Sequence Modelling
+    slides: WSTA_L16_probabilistic_sequence_models.pdf
+    notebook: WSTA_N16_hidden_markov_models.ipynb
     reading:
-      - <a href="http://www.cs.columbia.edu/~blei/papers/Blei2012.pdf"> David Blei's ACM paper </a>
-      - (optional) <a href="https://mimno.infosci.cornell.edu/papers/2017_fntir_tm_applications.pdf"> Applications of topic models </a>
-    who: daniel
-    show: 1
-   -
-    date: 2018-4-25
-    title: "ANZAC day holiday"
+        - <a href="https://web.stanford.edu/~jurafsky/slp3/9.pdf">JM3 Ch. 9.1, 9.2, 9.4</a>
+        - <a href="https://web.stanford.edu/~jurafsky/slp3/10.pdf">JM3 Ch. 10.4</a>
+    who: trevor
+    week: 8
+    show: 0 
 # week 9
    -
-    date: 2018-4-30
+    date: 2019-5-6
     title: "Workshop"
     type: workshop
     worksheet:
         - workshop-09.pdf
         - solutions-09.pdf
     who: tutors
-    show: 1
+    week: 9
+    show: 0
    -
-    date: 2018-5-1
-    title: Information Retrieval -- indexing and querying in the vector space model
-    slides: WSTA_L16_ir_vsm.pdf
-    notebook: WSTA_N16_information_retrieval.ipynb
-    reading:
-        - <a href="http://nlp.stanford.edu/IR-book/pdf/06vect.pdf">IIR Chapter 6</a>
-        - <a href="http://nlp.stanford.edu/IR-book/pdf/11prob.pdf">IIR Chapter 11.4.3</a>
+    date: 2019-5-7
+    title: Context-Free Grammars
+    slides: WSTA_L17_context-free_grammars.pdf 
+    notebook: WSTA_N17_context-free_grammars.ipynb
+    reading: 
+      - <a href="https://web.stanford.edu/~jurafsky/slp3/11.pdf">JM3 Ch. 11.1-11.5</a>
+      - <a href="https://web.stanford.edu/~jurafsky/slp3/12.pdf">JM3 Ch. 12</a>
+      - <a href="http://people.umass.edu/nconstan/201/Constituency%20Tests.pdf">syntactic constituency tests</a>
     who: trevor
-    show: 1
+    week: 9
+    show: 0
    -
-    date: 2018-5-2
-    title: Index compression and efficient query processing
-    slides: WSTA_L17_IR.pdf
-    reading:
-        - <a href="https://nlp.stanford.edu/IR-book/pdf/05comp.pdf">IIR Chapter 5</a>
-    who: matthias
-    show: 1
+    date: 2019-5-8
+    title: Probabilisitic Parsing
+    slides: WSTA_L18_probabilistic_grammars.pdf
+    notebook: WSTA_N18_probabilistic_parsing.ipynb
+    reading: <a href="https://web.stanford.edu/~jurafsky/slp3/13.pdf">JM3 Ch. 13-13.6</a>
+    who: trevor
+    week: 9
+    show: 0
 # week 10
    -
-    date: 2018-5-7
-    title: Workshop 
+    date: 2019-5-13
+    title: "Workshop"
     type: workshop
     worksheet:
         - workshop-10.pdf
         - solutions-10.pdf
     who: tutors
-    show: 1
+    week: 10
+    show: 0
    -
-    date: 2018-5-8
-    title: Query completion and query expansion
-    slides: WSTA_L18_IR.pdf
-    reading:
-        - <a href="http://nlp.stanford.edu/IR-book/pdf/09expand.pdf">IIR Chapter 9 </a>
-    who: matthias  
-    show: 1
+    date: 2019-5-14
+    title: Dependency parsing
+    slides: WSTA_L19_dependency.pdf
+    reading: <a href="https://web.stanford.edu/~jurafsky/slp3/14.pdf">JM3 Ch. 14</a>
+    who: trevor
+    week: 10
+    show: 0
    -
-    date: 2018-5-9
-    title: Index construction and advanced queries
-    slides: WSTA_L19_IR.pdf
-    reading:
-        - <a href="http://nlp.stanford.edu/IR-book/pdf/04const.pdf">IIR Chapter 4 </a>
-        - (Optional) see also papers referenced in slides
-    who: matthias  
-    show: 1
+    date: 2019-5-15
+    title: Discourse
+    who: trevor
+    week: 10
+    show: 0
 # week 11
    -
-    date: 2018-5-14
-    title: Workshop 
+    date: 2019-5-20
+    title: "Workshop"
     type: workshop
     worksheet:
         - workshop-11.pdf
         - solutions-11.pdf
     who: tutors
-    show: 1
+    week: 11
+    show: 0
    -
-    date: 2018-5-15
-    title: IR evaluation and learning to rank
-    slides: WSTA_L20_IR_EVAL_L2R.pdf
-    reading:
-        - <a href="http://nlp.stanford.edu/IR-book/pdf/08eval.pdf">IIR Chapter 8</a>
-        - <a href="https://link-springer-com.ezp.lib.unimelb.edu.au/content/pdf/10.1007%2F978-3-642-14267-3.pdf">Learning to Rank for Information Retrieval, Chapter 1.3</a>
-    who: matthias
-    show: 1
-   -
-    date: 2018-5-16
+    date: 2019-5-21
     title: Machine Translation, word based models 
     slides: WSTA_L21_machine_translation_word.pdf
     notebook: WSTA_N21_machine_translation.ipynb
-    who: trevor
-    show: 1
     reading:
         - JM2 Chapter 25, 25.4-25.6
-        - 'Optional: <a href="https://www-cambridge-org.ezp.lib.unimelb.edu.au/core/services/aop-cambridge-core/content/view/6F03C4290D7E98278BB2F6A8CA8F6D1F/9780511815829c4_p81-126_CBO.pdf/wordbased_models.pdf">Koehn09 Chapter 4</a>, 4.1-4.3'
+    who: trevor
+    week: 11
+    show: 0
+   -
+    date: 2019-5-22
+    title: Machine translation, phrase based translation and neural encoder-decoder
+    slides: WSTA_L22_machine_translation_phrase.pdf
+    reading:
+        - JM2 Chapter 25, 25.7-25.9
+    week: 11
+    who: trevor
+    show: 0
 # week 12
    -
-    date: 2018-5-21
+    date: 2019-5-27
     title: "Workshop"
     type: workshop
-    worksheet: 
+    worksheet:
         - workshop-12.pdf
         - solutions-12.pdf
     who: tutors
-    show: 1
+    week: 12
+    show: 0
    -
-    date: 2018-5-22
-    title: Machine translation, phrase based translation and neural encoder-decoder
-    slides: WSTA_L22_machine_translation_phrase.pdf
-    who: trevor
-    show: 1
-    reading:
-        - 'JM2 Chapter 25: 25.7-25.9'
-        - 'Optional: <a href="https://www-cambridge-org.ezp.lib.unimelb.edu.au/core/services/aop-cambridge-core/content/view/0B9EC28212FB7D15563B8F9B85A2870B/9780511815829c5_p127-154_CBO.pdf/phrasebased_models.pdf">Koehn09 Chapter 5</a>, 5.1-5.2'
-        - 'Optional: <a href="https://www-cambridge-org.ezp.lib.unimelb.edu.au/core/services/aop-cambridge-core/content/view/50D47709AF26FAB89975797E5E5B6C12/9780511815829c6_p155-180_CBO.pdf/decoding.pdf">Koehn09 Chapter 6</a>, 6.1-6.2'
-        - '<a href="https://arxiv.org/abs/1703.01619">Neural Machine Translation and Sequence-to-sequence Models: A Tutorial, Neubig 2017; Sections 7 and 8</a>'
+    date: 2019-5-28
+    title: Guest lecture
+    who: guest
+    week: 12
+    show: 0
    -
-    date: 2018-5-23
+    date: 2019-5-29
     title: Subject review
     slides: 
-        - WSTA_L23_review.pdf
+        - WSTA_L24_review.pdf
     reading:
         - <a href="https://course-work.unimelb.edu.au/handle/11343/190835">exams from previous years on the library website</a>
+        - <a href="revision/solutions_2019.pdf">exam solutions 2018</a>
         - <a href="revision/solutions_2017.pdf">exam solutions 2017</a>
-        - <a href="revision/solutions_2015.pdf">exam solutions 2015</a>
-    who: trevor and daniel
-    show: 1
+    who: trevor
+    week: 12
+    show: 0
