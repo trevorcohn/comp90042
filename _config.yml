@@ -30,6 +30,9 @@ lectures:
     title: "Workshop on python basics (optional)"
     type: workshop-on-day
     reading: <a href="https://groklearning.com/learn/">Grok's interactive Intro to Python I and II</a>
+    type: workshop
+    worksheet: 
+        - week1-python-01.pdf
     who: tutors
     week: 1
     show: 1
