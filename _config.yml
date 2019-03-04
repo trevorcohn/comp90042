@@ -10,10 +10,9 @@ lectures:
       - <a href="https://web.stanford.edu/~jurafsky/slp3/2.pdf">JM3 Ch. 2</a>
     notebook: 
       - WSTA_N1_preprocessing.ipynb
-      - words
     who: trevor 
     week: 1
-    show: 0
+    show: 1
    -
     date: 2019-3-6
     title: Information Retrieval with the vector space model
@@ -21,10 +20,9 @@ lectures:
     notebook: WSTA_N2_information_retrieval.ipynb
     reading:
         - <a href="http://nlp.stanford.edu/IR-book/pdf/06vect.pdf">IIR Chapter 6</a>
-        - <a href="http://nlp.stanford.edu/IR-book/pdf/11prob.pdf">IIR Chapter 11.4.3</a>
     who: trevor
     week: 1
-    show: 0
+    show: 1
    -
     date: 2019-3-7
     title: "Workshop on python basics (optional)"
