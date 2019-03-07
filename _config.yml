@@ -39,10 +39,10 @@ lectures:
     type: workshop
     worksheet: 
         - workshop-02.pdf
-        - solutions-02.pdf
+        #- solutions-02.pdf
     who: tutors
     week: 2
-    show: 0
+    show: 1
    -
     date: 2019-3-12
     title: Index compression and efficient query processing
