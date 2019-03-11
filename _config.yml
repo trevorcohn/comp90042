@@ -42,7 +42,7 @@ lectures:
         - solutions-02.pdf
     who: tutors
     week: 2
-    show: 0
+    show: 1
    -
     date: 2019-3-12
     title: Index compression and efficient query processing
@@ -51,7 +51,7 @@ lectures:
         - <a href="https://nlp.stanford.edu/IR-book/pdf/05comp.pdf">IIR Chapter 5</a>
     who: matthias
     week: 2
-    show: 0
+    show: 1
    -
     date: 2019-3-13
     title: Query completion and query expansion
@@ -60,7 +60,7 @@ lectures:
         - <a href="http://nlp.stanford.edu/IR-book/pdf/09expand.pdf">IIR Chapter 9 </a>
     who: matthias  
     week: 2
-    show: 0
+    show: 1
 # week 3
    -
     date: 2019-3-18
