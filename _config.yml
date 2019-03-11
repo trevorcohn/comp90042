@@ -39,7 +39,7 @@ lectures:
     type: workshop
     worksheet: 
         - workshop-02.pdf
-        - solutions-02.pdf
+        #- solutions-02.pdf
     who: tutors
     week: 2
     show: 1
