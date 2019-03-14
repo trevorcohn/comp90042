@@ -68,10 +68,10 @@ lectures:
     type: workshop
     worksheet:
         - workshop-03.pdf
-        - solutions-03.pdf
+        # - solutions-03.pdf
     who: tutors
     week: 3
-    show: 0
+    show: 1
    -
     date: 2019-3-19
     title: Index construction and advanced queries
