@@ -77,21 +77,20 @@ lectures:
     title: Index construction and advanced queries
     slides: WSTA_L5_IR.pdf
     reading:
-        - <a href="http://nlp.stanford.edu/IR-book/pdf/04const.pdf">IIR Chapter 4 </a>
+        - <a href="http://nlp.stanford.edu/IR-book/pdf/04const.pdf">IIR Chapter 4</a>
+        - '<a href="https://link-springer-com.ezp.lib.unimelb.edu.au/book/10.1007%2F978-3-642-14267-3">Liu, Learning to Rank for Information Retrieval
+, section 1.3: Learning to Rank</a>'
     who: matthias  
     week: 3
-    show: 0
+    show: 1
    -
     date: 2019-3-20
-    title: Text classification
-    slides: WSTA_L6_text_classification.pdf
-    reading:
-      - <a href="https://web.stanford.edu/~jurafsky/slp3/6.pdf">JM3 Ch. 6</a>
-      - <a href="https://web.stanford.edu/~jurafsky/slp3/7.pdf">JM3 Ch. 7</a>
-    notebook: WSTA_N6_text_classification.ipynb
+    title: IR Evaluation and Learning to Rank 
+    slides: WSTA_L6_IR_Evaluation.pdf
+    reading: <a href="http://nlp.stanford.edu/IR-book/pdf/08eval.pdf">IIR Chapter 8</a>
     who: trevor
     week: 3
-    show: 0
+    show: 1
 # week 4
    -
     date: 2019-3-25
@@ -105,12 +104,12 @@ lectures:
     show: 0
    -
     date: 2019-3-26
-    title: Text clustering
-    slides: WSTA_L7_text_clustering.pdf
+    title: Text classification
+    slides: WSTA_L7_text_classification.pdf
     reading:
       - <a href="https://web.stanford.edu/~jurafsky/slp3/6.pdf">JM3 Ch. 6</a>
       - <a href="https://web.stanford.edu/~jurafsky/slp3/7.pdf">JM3 Ch. 7</a>
-    notebook: WSTA_N7_topic_models.ipynb
+    notebook: WSTA_N6_text_classification.ipynb
     who: trevor
     week: 4
     show: 0
