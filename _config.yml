@@ -86,7 +86,7 @@ lectures:
    -
     date: 2019-3-20
     title: IR Evaluation and Learning to Rank 
-    slides: WSTA_L6_IR_Evaluation.pdf
+    slides: WSTA_L6_IR_evaluation.pdf
     reading: <a href="http://nlp.stanford.edu/IR-book/pdf/08eval.pdf">IIR Chapter 8</a>
     who: trevor
     week: 3
