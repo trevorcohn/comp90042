@@ -112,7 +112,7 @@ lectures:
     notebook: WSTA_N6_text_classification.ipynb
     who: trevor
     week: 4
-    show: 0
+    show: 2
    -
     date: 2019-3-27
     title: Ngram language modelling
@@ -121,7 +121,7 @@ lectures:
     reading: <a href="https://web.stanford.edu/~jurafsky/slp3/4.pdf"> JM3 Ch. 4 </a>
     who: trevor
     week: 4
-    show: 0
+    show: 2
 # week 5
    -
     date: 2019-4-1
@@ -142,7 +142,7 @@ lectures:
     notebook: WSTA_N9_lexical_semantics.ipynb
     who: trevor
     week: 5
-    show: 0
+    show: 2
    -
     date: 2019-4-3
     title: Distributional semantics
@@ -153,7 +153,7 @@ lectures:
     notebook: WSTA_N10_distributional_semantics.ipynb 
     week: 5
     who: trevor
-    show: 0
+    show: 2
 # week 6
    -
     date: 2019-4-8
