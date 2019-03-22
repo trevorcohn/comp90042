@@ -39,7 +39,7 @@ lectures:
     type: workshop
     worksheet: 
         - workshop-02.pdf
-        #- solutions-02.pdf
+        - solutions-02.pdf
     who: tutors
     week: 2
     show: 1
@@ -94,14 +94,14 @@ lectures:
 # week 4
    -
     date: 2019-3-25
-    title: "Workshop on query expansion and text classification"
+    title: "Workshop on index construction and IR evaluation"
     type: workshop
     worksheet:
         - workshop-04.pdf
-        - solutions-04.pdf
+        #- solutions-04.pdf
     who: tutors
     week: 4
-    show: 0
+    show: 1
    -
     date: 2019-3-26
     title: Text classification
