@@ -109,6 +109,7 @@ lectures:
     reading:
       - <a href="https://web.stanford.edu/~jurafsky/slp3/4.pdf">JM3 Ch. 4</a>
       - <a href="https://web.stanford.edu/~jurafsky/slp3/5.pdf">JM3 Ch. 5</a>
+      - alternatively <a href="https://github.com/jacobeisenstein/gt-nlp-class/raw/master/notes/eisenstein-nlp-notes-10-15-2018.pdf">E18</a> 2.1, 4-4.1, 4.3-4.4.1
     notebook: WSTA_N7_text_classification.ipynb
     who: trevor
     week: 4
