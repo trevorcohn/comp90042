@@ -107,21 +107,21 @@ lectures:
     title: Text classification
     slides: WSTA_L7_text_classification.pdf
     reading:
-      - <a href="https://web.stanford.edu/~jurafsky/slp3/6.pdf">JM3 Ch. 6</a>
-      - <a href="https://web.stanford.edu/~jurafsky/slp3/7.pdf">JM3 Ch. 7</a>
-    notebook: WSTA_N6_text_classification.ipynb
+      - <a href="https://web.stanford.edu/~jurafsky/slp3/4.pdf">JM3 Ch. 4</a>
+      - <a href="https://web.stanford.edu/~jurafsky/slp3/5.pdf">JM3 Ch. 5</a>
+    notebook: WSTA_N7_text_classification.ipynb
     who: trevor
     week: 4
-    show: 2
+    show: 1
    -
     date: 2019-3-27
     title: Ngram language modelling
     slides: WSTA_L8_n-gram_language_models.pdf
     notebook: WSTA_N8_n-gram_language_models.ipynb
-    reading: <a href="https://web.stanford.edu/~jurafsky/slp3/4.pdf"> JM3 Ch. 4 </a>
+    reading: <a href="https://web.stanford.edu/~jurafsky/slp3/3.pdf"> JM3 Ch. 3 </a>
     who: trevor
     week: 4
-    show: 2
+    show: 1
 # week 5
    -
     date: 2019-4-1
