@@ -116,7 +116,7 @@ lectures:
     show: 1
    -
     date: 2019-3-27
-    title: Ngram language modelling
+    title: Ngram language modelling (error corrected in slides 28/3)
     slides: WSTA_L8_n-gram_language_models.pdf
     notebook: WSTA_N8_n-gram_language_models.ipynb
     reading: <a href="https://github.com/jacobeisenstein/gt-nlp-class/raw/master/notes/eisenstein-nlp-notes-10-15-2018.pdf">E18</a> Ch 6 (skipping 6.3)
