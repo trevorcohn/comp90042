@@ -126,7 +126,7 @@ lectures:
 # week 5
    -
     date: 2019-4-1
-    title: "Workshop on word semantics"
+    title: "Workshop on text classification and Ngram language modelling"
     type: workshop
     worksheet:
         - workshop-05.pdf
