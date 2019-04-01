@@ -140,8 +140,7 @@ lectures:
     slides: WSTA_L9_lexical_semantics.pdf
     reading:
       - <a href="https://web.stanford.edu/~jurafsky/slp3/C.pdf">JM3 C.1-C.3</a>
-    notebook: 
-#WSTA_N9_lexical_semantics.ipynb
+    notebook: WSTA_N9_lexical_semantics.ipynb
     who: trevor
     week: 5
     show: 1
@@ -152,8 +151,7 @@ lectures:
     reading:
       - <a href="https://github.com/jacobeisenstein/gt-nlp-class/raw/master/notes/eisenstein-nlp-notes-10-15-2018.pdf">E18</a> 14-14.6 (skipping 14.4)
       - or <a href="https://web.stanford.edu/~jurafsky/slp3/6.pdf">JM3 Ch. 15</a>
-    notebook: 
-#WSTA_N10_distributional_semantics.ipynb 
+    notebook: WSTA_N10_distributional_semantics.ipynb 
     week: 5
     who: trevor
     show: 1
