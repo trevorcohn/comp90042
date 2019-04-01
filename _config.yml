@@ -68,7 +68,7 @@ lectures:
     type: workshop
     worksheet:
         - workshop-03.pdf
-        # - solutions-03.pdf
+        - solutions-03.pdf
     who: tutors
     week: 3
     show: 1
@@ -126,14 +126,14 @@ lectures:
 # week 5
    -
     date: 2019-4-1
-    title: "Workshop on word semantics"
+    title: "Workshop on text classification and Ngram language modelling"
     type: workshop
     worksheet:
         - workshop-05.pdf
-        - solutions-05.pdf
+        #- solutions-05.pdf
     who: tutors
     week: 5
-    show: 0
+    show: 1
    -
     date: 2019-4-2
     title: Lexical semantics
