@@ -98,7 +98,7 @@ lectures:
     type: workshop
     worksheet:
         - workshop-04.pdf
-        #- solutions-04.pdf
+        - solutions-04.pdf
     who: tutors
     week: 4
     show: 1
@@ -162,10 +162,10 @@ lectures:
     type: workshop
     worksheet:
         - workshop-06.pdf
-        - solutions-06.pdf
+        - #solutions-06.pdf
     who: tutors
     week: 6
-    show: 0
+    show: 1
    -
     date: 2019-4-9
     title: Part of Speech Tagging 
