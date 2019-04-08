@@ -170,22 +170,21 @@ lectures:
     date: 2019-4-9
     title: Part of Speech Tagging 
     reading: 
-     - <a href="https://web.stanford.edu/~jurafsky/slp3/10.pdf">JM3 Ch. 10.1-10.3, 10.7</a>
+     - <a href="https://web.stanford.edu/~jurafsky/slp3/8.pdf">JM3 8.1-8.3, 8.5.1</a>
     slides: WSTA_L11_part_of_speech_tagging.pdf
     notebook: WSTA_N11_part_of_speech_tagging.ipynb
     who: trevor
     week: 6
-    show: 0
+    show: 1
    -
     date: 2019-4-10
     title: Deep learning for language models and tagging
     who: trevor
     slides: WSTA_L12_neural_sequence_models.pdf
     reading: 
-        - <a href="https://web.stanford.edu/~jurafsky/slp3/8.pdf"> JM3 Ch. 8 </a>
-        - <a href="https://arxiv.org/abs/1703.01619"> Neubig 2017, sections 5-6 </a>
+      - <a href="https://github.com/jacobeisenstein/gt-nlp-class/raw/master/notes/eisenstein-nlp-notes-10-15-2018.pdf">E18</a> 6.3 (skip 6.3.1), 7.6
     week: 6
-    show: 0
+    show: 1
 # week 7
    -
     date: 2019-4-15
@@ -201,24 +200,24 @@ lectures:
     date: 2019-4-16
     title: Information Extraction
     slides: 
-    reading: <a href="https://web.stanford.edu/~jurafsky/slp4/21.pdf"> JM3 Ch. 21 </a>
+    reading: <a href="https://web.stanford.edu/~jurafsky/slp3/17.pdf"> JM3 Ch. 17 - 17.2 </a> 
     who: trevor
     slides: WSTA_L13_information_extraction.pdf
     week: 7
-    show: 0
+    show: 2
    -
     date: 2019-4-17
     title: Question Answering 
     slides:  WSTA_L14_question_answering.pdf
     reading: 
-      - <a href="https://web.stanford.edu/~jurafsky/slp3/28.pdf"> JM3 Ch. 28 </a>
+      - <a href="https://web.stanford.edu/~jurafsky/slp3/23.pdf"> JM3 Ch. 23 </a>
     who: trevor
     week: 7
-    show: 0
+    show: 2
 # week off
    -
     date: 2019-4-22
-    title: "Easter holiday break"
+    title: "Easter break"
     week: 7
 # week 8
    -
