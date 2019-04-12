@@ -130,7 +130,7 @@ lectures:
     type: workshop
     worksheet:
         - workshop-05.pdf
-        #- solutions-05.pdf
+        - solutions-05.pdf
     who: tutors
     week: 5
     show: 1
@@ -192,10 +192,10 @@ lectures:
     type: workshop
     worksheet:
         - workshop-07.pdf
-        - solutions-07.pdf
+        #- solutions-07.pdf
     who: tutors
     week: 7
-    show: 0
+    show: 1
    -
     date: 2019-4-16
     title: Information Extraction
