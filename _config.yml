@@ -130,7 +130,7 @@ lectures:
     type: workshop
     worksheet:
         - workshop-05.pdf
-        #- solutions-05.pdf
+        - solutions-05.pdf
     who: tutors
     week: 5
     show: 1
@@ -158,7 +158,7 @@ lectures:
 # week 6
    -
     date: 2019-4-8
-    title: "Workshop"
+    title: "Workshop on word semantics"
     type: workshop
     worksheet:
         - workshop-06.pdf
@@ -188,14 +188,14 @@ lectures:
 # week 7
    -
     date: 2019-4-15
-    title: "Workshop (schedule altered for Good Friday holiday)"
+    title: "Workshop on POS and deep learning for language models (schedule altered for Good Friday holiday)"
     type: workshop
     worksheet:
         - workshop-07.pdf
-        - solutions-07.pdf
+        #- solutions-07.pdf
     who: tutors
     week: 7
-    show: 0
+    show: 1
    -
     date: 2019-4-16
     title: Information Extraction
