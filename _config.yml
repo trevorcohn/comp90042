@@ -204,16 +204,17 @@ lectures:
     who: trevor
     slides: WSTA_L13_information_extraction.pdf
     week: 7
-    show: 2
+    show: 1
    -
     date: 2019-4-17
     title: Question Answering 
     slides:  WSTA_L14_question_answering.pdf
     reading: 
-      - <a href="https://web.stanford.edu/~jurafsky/slp3/23.pdf"> JM3 Ch. 23 </a>
+      - <a href="https://web.stanford.edu/~jurafsky/slp3/23.pdf"> JM3 Ch. 23 (skip 23.1.7, 23.2.3, 23.3) </a>
+      - E18 17.5.2 (skipping methods)
     who: trevor
     week: 7
-    show: 2
+    show: 1
 # week off
    -
     date: 2019-4-22
