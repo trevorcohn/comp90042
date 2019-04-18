@@ -162,7 +162,7 @@ lectures:
     type: workshop
     worksheet:
         - workshop-06.pdf
-        - #solutions-06.pdf
+        - solutions-06.pdf
     who: tutors
     week: 6
     show: 1
