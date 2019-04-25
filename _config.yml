@@ -223,7 +223,7 @@ lectures:
 # week 8
    -
     date: 2019-4-29
-    title: "Workshop on Information Extraction and Question Answering"
+    title: "Workshop on information extraction and question answering"
     type: workshop
     worksheet:
         - workshop-08.pdf
