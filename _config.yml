@@ -233,18 +233,24 @@ lectures:
     show: 0
    -
     date: 2019-4-30
-    title: Language theory and automata
-   -
-    date: 2019-5-1
     title: Probabilisitic Sequence Modelling
-    slides: WSTA_L16_probabilistic_sequence_models.pdf
-    notebook: WSTA_N16_hidden_markov_models.ipynb
+    slides: WSTA_L15_probabilistic_sequence_models.pdf
+    notebook: WSTA_N15_hidden_markov_models.ipynb
     reading:
-        - <a href="https://web.stanford.edu/~jurafsky/slp3/9.pdf">JM3 Ch. 9.1, 9.2, 9.4</a>
-        - <a href="https://web.stanford.edu/~jurafsky/slp3/10.pdf">JM3 Ch. 10.4</a>
+        - <a href="https://web.stanford.edu/~jurafsky/slp3/A.pdf">JM3 Ch. A.1, A.2, A.4</a>
     who: trevor
     week: 8
-    show: 0 
+    show: 1 
+   -
+    date: 2019-5-1
+    title: Language theory and automata
+    slides: WSTA_L16_finite_state_automata.pdf
+    notebook: 
+    reading:
+      - <a href="https://github.com/jacobeisenstein/gt-nlp-class/raw/master/notes/eisenstein-nlp-notes-10-15-2018.pdf">E18</a> Chapter 9
+    who: trevor
+    week: 8
+    show: 1 
 # week 9
    -
     date: 2019-5-6
