@@ -162,7 +162,7 @@ lectures:
     type: workshop
     worksheet:
         - workshop-06.pdf
-        - #solutions-06.pdf
+        - solutions-06.pdf
     who: tutors
     week: 6
     show: 1
@@ -192,7 +192,7 @@ lectures:
     type: workshop
     worksheet:
         - workshop-07.pdf
-        #- solutions-07.pdf
+        - solutions-07.pdf
     who: tutors
     week: 7
     show: 1
@@ -223,14 +223,14 @@ lectures:
 # week 8
    -
     date: 2019-4-29
-    title: "Workshop"
+    title: "Workshop on information extraction and question answering"
     type: workshop
     worksheet:
         - workshop-08.pdf
-        - solutions-08.pdf
+        #- solutions-08.pdf
     who: tutors
     week: 8
-    show: 0
+    show: 1
    -
     date: 2019-4-30
     title: Probabilisitic Sequence Modelling
