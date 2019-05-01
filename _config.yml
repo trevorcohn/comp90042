@@ -247,7 +247,7 @@ lectures:
     slides: WSTA_L16_finite_state_automata.pdf
     notebook: 
     reading:
-      - <a href="https://github.com/jacobeisenstein/gt-nlp-class/raw/master/notes/eisenstein-nlp-notes-10-15-2018.pdf">E18</a> Chapter 9
+      - <a href="https://github.com/jacobeisenstein/gt-nlp-class/raw/master/notes/eisenstein-nlp-notes-10-15-2018.pdf">E18</a> Chapter 9.1 (skip starred parts)
     who: trevor
     week: 8
     show: 1 
