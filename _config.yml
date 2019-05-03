@@ -254,7 +254,7 @@ lectures:
 # week 9
    -
     date: 2019-5-6
-    title: "Workshop"
+    title: "Workshop on HMM and FSA"
     type: workshop
     worksheet:
         - workshop-09.pdf
