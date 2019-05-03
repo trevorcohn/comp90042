@@ -258,10 +258,10 @@ lectures:
     type: workshop
     worksheet:
         - workshop-09.pdf
-        - solutions-09.pdf
+        #- solutions-09.pdf
     who: tutors
     week: 9
-    show: 0
+    show: 1
    -
     date: 2019-5-7
     title: Context-Free Grammars
