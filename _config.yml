@@ -268,21 +268,20 @@ lectures:
     slides: WSTA_L17_context-free_grammars.pdf 
     notebook: WSTA_N17_context-free_grammars.ipynb
     reading: 
-      - <a href="https://web.stanford.edu/~jurafsky/slp3/11.pdf">JM3 Ch. 11.1-11.5</a>
-      - <a href="https://web.stanford.edu/~jurafsky/slp3/12.pdf">JM3 Ch. 12</a>
-      - <a href="http://people.umass.edu/nconstan/201/Constituency%20Tests.pdf">syntactic constituency tests</a>
+      - <a href="https://web.stanford.edu/~jurafsky/slp3/10.pdf">JM3 Ch. 10.1-10.5</a>
+      - <a href="https://web.stanford.edu/~jurafsky/slp3/11.pdf">JM3 Ch. 11-11.2</a>
     who: trevor
     week: 9
-    show: 0
+    show: 1
    -
     date: 2019-5-8
     title: Probabilisitic Parsing
     slides: WSTA_L18_probabilistic_grammars.pdf
     notebook: WSTA_N18_probabilistic_parsing.ipynb
-    reading: <a href="https://web.stanford.edu/~jurafsky/slp3/13.pdf">JM3 Ch. 13-13.6</a>
+    reading: <a href="https://web.stanford.edu/~jurafsky/slp3/12.pdf">JM3 Ch. 12-12.6</a>
     who: trevor
     week: 9
-    show: 0
+    show: 1
 # week 10
    -
     date: 2019-5-13
