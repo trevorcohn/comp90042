@@ -275,7 +275,7 @@ lectures:
     show: 1
    -
     date: 2019-5-8
-    title: Probabilisitic Parsing
+    title: Probabilisitic Parsing (slides and notebook updated to correct mistakes, 8/5/19)
     slides: WSTA_L18_probabilistic_grammars.pdf
     notebook: WSTA_N18_probabilistic_parsing.ipynb
     reading: <a href="https://web.stanford.edu/~jurafsky/slp3/12.pdf">JM3 Ch. 12-12.6</a>
