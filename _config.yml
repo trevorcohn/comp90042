@@ -233,7 +233,7 @@ lectures:
     show: 1
    -
     date: 2019-4-30
-    title: Probabilisitic Sequence Modelling
+    title: Probabilistic Sequence Modelling
     slides: WSTA_L15_probabilistic_sequence_models.pdf
     notebook: WSTA_N15_hidden_markov_models.ipynb
     reading:
@@ -275,7 +275,7 @@ lectures:
     show: 1
    -
     date: 2019-5-8
-    title: Probabilisitic Parsing (slides and notebook updated to correct mistakes, 8/5/19)
+    title: Probabilistic Parsing (slides and notebook updated to correct mistakes, 8/5/19)
     slides: WSTA_L18_probabilistic_grammars.pdf
     notebook: WSTA_N18_probabilistic_parsing.ipynb
     reading: <a href="https://web.stanford.edu/~jurafsky/slp3/12.pdf">JM3 Ch. 12-12.6</a>
@@ -285,7 +285,7 @@ lectures:
 # week 10
    -
     date: 2019-5-13
-    title: "Workshop on CFG and Probabilisitic Parsing"
+    title: "Workshop on CFG and Probabilistic Parsing"
     type: workshop
     worksheet:
         - workshop-10.pdf
