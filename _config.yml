@@ -297,16 +297,18 @@ lectures:
     date: 2019-5-14
     title: Dependency parsing
     slides: WSTA_L19_dependency.pdf
-    reading: <a href="https://web.stanford.edu/~jurafsky/slp3/14.pdf">JM3 Ch. 14</a>
+    reading: <a href="https://web.stanford.edu/~jurafsky/slp3/13.pdf">JM3 Ch. 13</a>
     who: trevor
     week: 10
-    show: 0
+    show: 1
    -
     date: 2019-5-15
     title: Discourse
+    slides: WSTA_L20_discourse.pdf
+    reading: <a href="https://github.com/rain1024/slp2-pdf/blob/master/chapter-wise-pdf/%5B21%5D%20Computational%20Discourse.pdf">JM2 Ch. 21 (21.1-21.3, 21.5-21.6)</a>
     who: trevor
     week: 10
-    show: 0
+    show: 1
 # week 11
    -
     date: 2019-5-20
