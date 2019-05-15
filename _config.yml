@@ -312,7 +312,7 @@ lectures:
 # week 11
    -
     date: 2019-5-20
-    title: "Workshop on Dependency parsing and Discourse"
+    title: "Workshop on dependency parsing and discourse"
     type: workshop
     worksheet:
         - workshop-11.pdf
@@ -342,7 +342,7 @@ lectures:
 # week 12
    -
     date: 2019-5-27
-    title: "Workshop on Machine Translation"
+    title: "Workshop on machine translation"
     type: workshop 
     worksheet:
         - workshop-12.pdf
