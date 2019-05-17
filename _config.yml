@@ -285,7 +285,7 @@ lectures:
 # week 10
    -
     date: 2019-5-13
-    title: "Workshop on CFG and Probabilistic Parsing"
+    title: "Workshop on CFG and probabilistic parsing"
     type: workshop
     worksheet:
         - workshop-10.pdf
