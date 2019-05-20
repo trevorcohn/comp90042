@@ -326,19 +326,20 @@ lectures:
     slides: WSTA_L21_machine_translation_word.pdf
     notebook: WSTA_N21_machine_translation.ipynb
     reading:
-        - JM2 Chapter 25, 25.4-25.6
+        - <a href="https://github.com/rain1024/slp2-pdf/raw/master/chapter-wise-pdf/%5B25%5D%20Machine%20Translation.pdf">JM2 Chapter 25</a>, intro, 25.3-25.6
     who: trevor
     week: 11
-    show: 0
+    show: 1
    -
     date: 2019-5-22
     title: Machine translation, phrase based translation and neural encoder-decoder
     slides: WSTA_L22_machine_translation_phrase.pdf
     reading:
-        - JM2 Chapter 25, 25.7-25.9
+        - <a href="https://github.com/rain1024/slp2-pdf/raw/master/chapter-wise-pdf/%5B25%5D%20Machine%20Translation.pdf">JM2 Chapter 25</a>, 25.7-25.9
+	- E18 18.3 – 18.3.2
     week: 11
     who: trevor
-    show: 0
+    show: 1
 # week 12
    -
     date: 2019-5-27
@@ -352,7 +353,7 @@ lectures:
     show: 0
    -
     date: 2019-5-28
-    title: Guest lecture
+    title: Guest lecture 
     who: guest
     week: 12
     show: 0
