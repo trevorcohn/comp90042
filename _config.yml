@@ -336,7 +336,7 @@ lectures:
     slides: WSTA_L22_machine_translation_phrase.pdf
     reading:
         - <a href="https://github.com/rain1024/slp2-pdf/raw/master/chapter-wise-pdf/%5B25%5D%20Machine%20Translation.pdf">JM2 Chapter 25</a>, 25.7-25.9
-	- E18 18.3 – 18.3.2
+        - E18 18.3–18.3.2
     week: 11
     who: trevor
     show: 1
