@@ -289,7 +289,7 @@ lectures:
     type: workshop
     worksheet:
         - workshop-10.pdf
-        #- solutions-10.pdf
+        - solutions-10.pdf
     who: tutors
     week: 10
     show: 1
@@ -347,10 +347,10 @@ lectures:
     type: workshop 
     worksheet:
         - workshop-12.pdf
-        - solutions-12.pdf
+        #- solutions-12.pdf
     who: tutors
     week: 12
-    show: 0
+    show: 1
    -
     date: 2019-5-28
     title: Guest lecture 
