@@ -357,7 +357,7 @@ lectures:
     who: guest
     slides: WSTA_L23_memory.pdf
     week: 12
-    show: 2
+    show: 1
    -
     date: 2019-5-29
     title: Subject review
@@ -368,4 +368,4 @@ lectures:
         - see LMS for solutions to 2017 exam
     who: trevor
     week: 12
-    show: 2
+    show: 1
