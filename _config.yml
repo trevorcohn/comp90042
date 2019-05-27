@@ -353,10 +353,11 @@ lectures:
     show: 1
    -
     date: 2019-5-28
-    title: Guest lecture 
+    title: Memory-enhanced models for Discourse Understanding (Fei Liu)
     who: guest
+    slides: WSTA_L23_memory.pdf
     week: 12
-    show: 0
+    show: 2
    -
     date: 2019-5-29
     title: Subject review
