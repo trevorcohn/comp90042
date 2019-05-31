@@ -316,7 +316,7 @@ lectures:
     type: workshop
     worksheet:
         - workshop-11.pdf
-        #- solutions-11.pdf
+        - solutions-11.pdf
     who: tutors
     week: 11
     show: 1
@@ -347,7 +347,7 @@ lectures:
     type: workshop 
     worksheet:
         - workshop-12.pdf
-        #- solutions-12.pdf
+        - solutions-12.pdf
     who: tutors
     week: 12
     show: 1
